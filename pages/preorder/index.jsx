@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import { Canvas, useThree, useFrame } from "@react-three/fiber";
 import { motion } from "framer-motion";
 import { Environment, Text, Sparkles } from "@react-three/drei";
@@ -43,30 +42,19 @@ function Bg() {
   );
 }
 
-const Home: NextPage = ({
-  scale = Array.from({ length: 50 }, () => 0.5 + Math.random() * 4),
+const Home = ({
+  scale = Array.from({ length: 100 }, () => 0.5 + Math.random() * 4),
 }) => {
   return (
     <motion.div
-      className="h-screen flex place-content-center"
+      className="h-screen"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: ".5" }}
     >
       <Navbar />
-      <div className="max-w-[1300px] font-major text-2xl text-white flex fixed mt-[160px] z-10 mx-auto w-full flex-col space-y-10">
-        <h1 className="w-2/3 leading-10">
-          What started with a marketing opportunity evolved into a PASSION for
-          fostering community and engineering the best surfboard imaginable.
-        </h1>
-        <h1 className="w-2/3 indent-10 leading-10">
-          c6 aims to make the durability and light-weighted properties of carbon
-          fiber economically viable for those looking for an EDGE.
-        </h1>
-      </div>
-      <Canvas shadows={true} className="fixed top-0 right-0 left-0">
+      <Canvas shadows={true}>
         <Bg />
-        <Rig />
         <color attach="background" args={["#101010"]} />
         <Environment preset="sunset" />
         <Sparkles

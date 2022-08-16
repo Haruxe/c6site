@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import { Canvas, useThree, useFrame } from "@react-three/fiber";
 import SurfBoardModel from "../components/NewBoard.js";
 import { motion } from "framer-motion";
@@ -63,7 +62,7 @@ function Bg() {
   );
 }
 
-const Home: NextPage = ({
+const Home = ({
   scale = Array.from({ length: 100 }, () => 0.5 + Math.random() * 4),
 }) => {
   return (
