@@ -1,21 +1,19 @@
 import type { NextPage } from "next";
 import { Canvas, useThree, useFrame } from "@react-three/fiber";
-import SurfBoardModel from "../components/NewBoard.js";
 import { motion } from "framer-motion";
-import { Suspense } from "react";
-import { Cloud, Environment, Text, Sparkles } from "@react-three/drei";
+import { Environment, Text, Sparkles } from "@react-three/drei";
 import { LayerMaterial, Depth, Noise } from "lamina";
 import * as THREE from "three";
-import Navbar from "../components/Navbar.js";
+import Navbar from "../../components/Navbar.js";
 
 function Caption({ children }) {
   const { width } = useThree((state) => state.viewport);
   return (
     <Text
-      position={[0, -4.5, 0]}
-      lineHeight={1.4}
+      position={[0, -5, 0]}
+      lineHeight={1}
       font="MajorMonoDisplay-Regular.ttf"
-      fontSize={0.4}
+      fontSize={0.3}
       material-toneMapped={false}
       anchorX="center"
       anchorY="middle"
@@ -71,12 +69,11 @@ const Home: NextPage = ({
       className="h-screen"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: "2" }}
+      transition={{ duration: ".5" }}
     >
       <Navbar />
       <Canvas shadows={true}>
         <Bg />
-        <Cloud position={[0, 0, -5]} depth={1.5} speed={0.2} opacity={0.2} />
         <color attach="background" args={["#101010"]} />
         <Environment preset="sunset" />
         <Sparkles
@@ -86,14 +83,6 @@ const Home: NextPage = ({
           scale={[10, 10, 10]}
           speed={0.3}
         />
-        <Suspense fallback={null}>
-          <SurfBoardModel position={[0, 1, 0]} />
-          <ambientLight intensity={90} />
-          <Rig />
-          <Caption>
-            {"the world's first\nTRUE carbon fiber\nsurfboards."}
-          </Caption>
-        </Suspense>
       </Canvas>
     </motion.div>
   );
