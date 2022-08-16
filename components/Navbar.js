@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import logoWhite from "../public/logoWhiteMin.png";
 import Image from "next/image.js";
+import Link from "next/link";
 
 export default function Navbar() {
   return (
@@ -11,9 +12,9 @@ export default function Navbar() {
             whileHover={{ scale: 1.05 }}
             className="hover:animate-pulse lg:w-10 w-8"
           >
-            <a href="/">
+            <Link href="/">
               <Image src={logoWhite} className="cursor-pointer" />
-            </a>
+            </Link>
           </motion.div>
         </div>
         <div className="place-self-end ml-auto lg:space-x-20 space-x-5 text-sm flex my-auto text-white">
@@ -25,9 +26,9 @@ export default function Navbar() {
             }}
             className="my-auto hover:animate-pulse"
           >
-            <a href="/discover">
+            <Link href="/discover">
               <h1 className="font-major underline-offset-4">Discover</h1>
-            </a>
+            </Link>
           </motion.div>
           <motion.div
             whileHover={{
@@ -37,18 +38,18 @@ export default function Navbar() {
             }}
             className="my-auto hover:animate-pulse"
           >
-            <a href="/about">
+            <Link href="/about">
               <h1 className="font-major underline-offset-4">About</h1>
-            </a>
+            </Link>
           </motion.div>
           <motion.div
             whileHover={{ scale: 1.05, background: "#aed1ff" }}
             className="rounded-md py-1 px-2 my-auto border border-1 border-black text-black hover:animate-pulse"
             style={{ background: "white" }}
           >
-            <a href="/preorder">
+            <Link href="/preorder">
               <h1 className="font-major">Preorder</h1>
-            </a>
+            </Link>
           </motion.div>
         </div>
       </div>

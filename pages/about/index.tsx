@@ -1,32 +1,10 @@
 import type { NextPage } from "next";
 import { Canvas, useThree, useFrame } from "@react-three/fiber";
 import { motion } from "framer-motion";
-import { Suspense, useRef, useState } from "react";
-import { Cloud, Environment, Text, Sparkles, Html } from "@react-three/drei";
+import { Environment, Text, Sparkles } from "@react-three/drei";
 import { LayerMaterial, Depth, Noise } from "lamina";
 import * as THREE from "three";
-import logoWhite from "../../public/logoWhiteMin.png";
-import Image from "next/image.js";
-import { Instagram } from "styled-icons/feather";
 import Navbar from "../../components/Navbar.js";
-
-function Caption({ children }) {
-  const { width } = useThree((state) => state.viewport);
-  return (
-    <Text
-      position={[0, 5, 0]}
-      lineHeight={2}
-      font="MajorMonoDisplay-Regular.ttf"
-      fontSize={0.3}
-      material-toneMapped={false}
-      anchorX="right"
-      anchorY="top"
-      color={"white"}
-    >
-      {children}
-    </Text>
-  );
-}
 
 function Rig({ v = new THREE.Vector3() }) {
   return useFrame((state) => {
