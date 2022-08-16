@@ -52,7 +52,6 @@ const Home = ({
       animate={{ opacity: 1 }}
       transition={{ duration: ".5" }}
     >
-      <Navbar />
       <Canvas shadows={true}>
         <Bg />
         <color attach="background" args={["#101010"]} />

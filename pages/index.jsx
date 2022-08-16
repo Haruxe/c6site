@@ -1,14 +1,19 @@
-import { Canvas, useThree, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import SurfBoardModel from "../components/NewBoard.js";
 import { motion } from "framer-motion";
 import { Suspense } from "react";
-import { Cloud, Environment, Text, Sparkles } from "@react-three/drei";
+import {
+  Cloud,
+  Environment,
+  Text,
+  Sparkles,
+  Lightformer,
+  Float,
+} from "@react-three/drei";
 import { LayerMaterial, Depth, Noise } from "lamina";
 import * as THREE from "three";
-import Navbar from "../components/Navbar.js";
 
-function Caption({ children }) {
-  const { width } = useThree((state) => state.viewport);
+function Caption({ children, darkMode }) {
   return (
     <Text
       position={[0, -4.5, 0]}
@@ -18,7 +23,7 @@ function Caption({ children }) {
       material-toneMapped={false}
       anchorX="center"
       anchorY="middle"
-      color={"white"}
+      color={darkMode ? "white" : "black"}
     >
       {children}
     </Text>
@@ -34,14 +39,14 @@ function Rig({ v = new THREE.Vector3() }) {
   });
 }
 
-function Bg() {
+function Bg({ darkMode }) {
   return (
-    <mesh scale={100}>
+    <mesh scale={100} rotation={[0, Math.PI / 4, 0]}>
       <boxGeometry args={[1, 1, 1]} />
       <LayerMaterial side={THREE.BackSide}>
         <Depth
-          colorB="#282952"
-          colorA="black"
+          colorB={darkMode ? "#282952" : "#c1ecf7"}
+          colorA={darkMode ? "black" : "#9c9c9c"}
           alpha={1}
           mode="normal"
           near={130}
@@ -64,6 +69,7 @@ function Bg() {
 
 const Home = ({
   scale = Array.from({ length: 100 }, () => 0.5 + Math.random() * 4),
+  darkMode,
 }) => {
   return (
     <motion.div
@@ -72,24 +78,32 @@ const Home = ({
       animate={{ opacity: 1 }}
       transition={{ duration: "2" }}
     >
-      <Navbar />
       <Canvas shadows={true}>
-        <Bg />
+        <Bg darkMode={darkMode} />
         <Cloud position={[0, 0, -5]} depth={1.5} speed={0.2} opacity={0.2} />
-        <color attach="background" args={["#101010"]} />
-        <Environment preset="sunset" />
+        <color
+          attach="background"
+          args={darkMode ? ["#101010"] : ["#969696"]}
+        />
+        <Environment preset="studio" />
         <Sparkles
           count={scale.length}
           size={scale}
           position={[0, 0, 0]}
           scale={[10, 10, 10]}
           speed={0.3}
+          color={darkMode ? "white" : "black"}
         />
         <Suspense fallback={null}>
-          <SurfBoardModel position={[0, 1, 0]} />
-          <ambientLight intensity={90} />
+          <Float
+            speed={2} // Animation speed, defaults to 1
+            floatIntensity={2} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
+            floatingRange={[-0.1, 0.1]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
+          >
+            <SurfBoardModel position={[0, 1, 0]} />
+          </Float>
           <Rig />
-          <Caption>
+          <Caption darkMode={darkMode}>
             {"the world's first\nTRUE carbon fiber\nsurfboards."}
           </Caption>
         </Suspense>
