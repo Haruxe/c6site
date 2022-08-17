@@ -77,7 +77,7 @@ const Home = ({
       animate={{ opacity: 1 }}
       transition={{ duration: "2" }}
     >
-      <div className="max-w-[1300px] font-major font-bold md:text-2xl text-md dark:text-white text-black flex absolute md:mt-[160px] mt-[60px] z-10 mx-auto w-full flex-col space-y-10 p-8">
+      <div className="max-w-[1300px] font-major font-bold md:text-2xl text-sm dark:text-white text-black flex absolute md:mt-[160px] mt-[60px] z-10 mx-auto w-full flex-col space-y-10 p-8">
         <h1 className="w-full leading-10 text-4xl">About</h1>
         <h1 className="md:w-2/3 w-full leading-10">
           What started as a hole in the surf market evolved into a PASSION for
@@ -93,7 +93,7 @@ const Home = ({
           <a
             href="https://instagram.com/c6surf"
             target={"none"}
-            className="animate-pulse"
+            className=" text-red-200"
           >
             INSTAGRAM{" "}
           </a>

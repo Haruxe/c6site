@@ -30,15 +30,24 @@ function MyApp({ Component, pageProps }: AppProps) {
     function handleResize() {
       setWindowSize(window.innerWidth);
     }
+    if (window.innerWidth < 600) {
+      setWindowSize(50);
+    }
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  useEffect(() => {
+    if (windowSize >= 600) {
+      setOpen(false);
+    }
+  }, [windowSize]);
+
   const NavMenu = () => {
     return (
       <motion.div
-        className="dark:bg-white bg-black flex flex-col rounded-sm text-white dark:text-black font-major p-3 border-1 border border-white dark:border-black space-y-5"
+        className="dark:bg-white bg-black flex flex-col z-20 rounded-sm text-white dark:text-black font-major p-3 border-1 border border-white dark:border-black space-y-5"
         initial={{ x: 200 }}
         animate={{ x: 0 }}
       >
