@@ -77,19 +77,19 @@ const Home = ({
       animate={{ opacity: 1 }}
       transition={{ duration: "2" }}
     >
-      <div className="max-w-[1300px] font-major font-bold text-2xl dark:text-white text-black flex fixed mt-[160px] z-10 mx-auto w-full flex-col space-y-10">
+      <div className="max-w-[1300px] font-major font-bold text-2xl dark:text-white text-black flex fixed mt-[160px] z-10 mx-auto w-full flex-col space-y-10 p-8">
         <h1 className="w-2/3 leading-10">
-          What started with a marketing opportunity evolved into a PASSION for
+          What started as a marketing opportunity evolved into a PASSION for
           fostering community and engineering the best surfboard imaginable.
         </h1>
         <h1 className="w-2/3 indent-10 leading-10">
           c6 aims to make the durability and light-weighted properties of carbon
-          fiber economically viable for those looking for an EDGE.
+          fiber economically viable for those looking for the SLEEKEST board
+          possible.
         </h1>
       </div>
       <Canvas shadows={true}>
         <Bg darkMode={darkMode} />
-        <Cloud position={[0, 0, -5]} depth={1.5} speed={0.2} opacity={0.2} />
         <color
           attach="background"
           args={darkMode ? ["#101010"] : ["#969696"]}
@@ -103,9 +103,6 @@ const Home = ({
           speed={0.3}
           color={darkMode ? "white" : "black"}
         />
-        <Suspense fallback={null}>
-          <Rig />
-        </Suspense>
       </Canvas>
     </motion.div>
   );

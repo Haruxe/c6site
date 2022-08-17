@@ -19,7 +19,7 @@ function Caption({ children, darkMode }) {
       position={[0, -4.5, 0]}
       lineHeight={1.4}
       font="MajorMonoDisplay-Regular.ttf"
-      fontSize={0.4}
+      fontSize={0.3}
       material-toneMapped={false}
       anchorX="center"
       anchorY="middle"
@@ -80,10 +80,16 @@ const Home = ({
     >
       <Canvas shadows={true}>
         <Bg darkMode={darkMode} />
-        <Cloud position={[0, 0, -5]} depth={1.5} speed={0.2} opacity={0.2} />
+        <Cloud
+          position={[0, 0, -5]}
+          depth={1.5}
+          speed={0.2}
+          opacity={0.2}
+          color={darkMode ? "black" : "#9c9c9c"}
+        />
         <color
           attach="background"
-          args={darkMode ? ["#101010"] : ["#969696"]}
+          args={darkMode ? ["#969696"] : ["#101010"]}
         />
         <Environment preset="studio" />
         <Sparkles
@@ -104,7 +110,7 @@ const Home = ({
           </Float>
           <Rig />
           <Caption darkMode={darkMode}>
-            {"the world's first\nTRUE carbon fiber\nsurfboards."}
+            {"the world's first\nTRUE carbon fiber\nsurfboards are HERE."}
           </Caption>
         </Suspense>
       </Canvas>
