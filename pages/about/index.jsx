@@ -72,20 +72,33 @@ const Home = ({
 }) => {
   return (
     <motion.div
-      className="h-screen flex place-content-center"
+      className="flex place-content-center h-screen"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: "2" }}
     >
-      <div className="max-w-[1300px] font-major font-bold text-2xl dark:text-white text-black flex fixed mt-[160px] z-10 mx-auto w-full flex-col space-y-10 p-8">
-        <h1 className="w-2/3 leading-10">
-          What started as a marketing opportunity evolved into a PASSION for
-          fostering community and engineering the best surfboard imaginable.
+      <div className="max-w-[1300px] font-major font-bold md:text-2xl text-md dark:text-white text-black flex absolute md:mt-[160px] mt-[60px] z-10 mx-auto w-full flex-col space-y-10 p-8">
+        <h1 className="w-full leading-10 text-4xl">About</h1>
+        <h1 className="md:w-2/3 w-full leading-10">
+          What started as a hole in the surf market evolved into a PASSION for
+          fostering community and engineering the best board IMAGINABLE.
         </h1>
-        <h1 className="w-2/3 indent-10 leading-10">
-          c6 aims to make the durability and light-weighted properties of carbon
-          fiber economically viable for those looking for the SLEEKEST board
-          possible.
+        <h1 className="md:w-2/3 w-full leading-10">
+          compared to its fiberglass counterpart, carbon fiber weighs
+          significantly less and is much more responsive. Did I mention it looks
+          sick too?
+        </h1>
+        <h1 className="md:w-2/3 w-full leading-10">
+          Follow us on{" "}
+          <a
+            href="https://instagram.com/c6surf"
+            target={"none"}
+            className="animate-pulse"
+          >
+            INSTAGRAM{" "}
+          </a>
+          to stay up to date with official board updates and other dope surf
+          content.
         </h1>
       </div>
       <Canvas shadows={true}>

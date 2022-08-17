@@ -116,10 +116,12 @@ function MyApp({ Component, pageProps }: AppProps) {
           <div className="place-self-end ml-auto lg:space-x-20 space-x-5 text-sm flex my-auto dark:text-white text-black dark:decoration-white decoration-black">
             {windowSize < 600 ? (
               <div className="flex flex-col">
-                <Menu
-                  className="w-8 cursor-pointer self-end"
-                  onClick={() => setOpen(!open)}
-                />
+                {!open && (
+                  <Menu
+                    className="w-8 cursor-pointer self-end"
+                    onClick={() => setOpen(!open)}
+                  />
+                )}
                 {open && <NavMenu />}
               </div>
             ) : (
@@ -171,7 +173,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           </div>
         </div>
       </div>
-      <Component {...pageProps} darkMode={darkMode} />
+      <Component {...pageProps} darkMode={darkMode} size={windowSize} />
     </>
   );
 }

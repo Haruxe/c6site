@@ -47,7 +47,6 @@ const Home = ({
 }) => {
   return (
     <motion.div
-      className="h-screen"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: ".5" }}

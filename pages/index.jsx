@@ -19,7 +19,7 @@ function Caption({ children, darkMode }) {
       position={[0, -4.5, 0]}
       lineHeight={1.4}
       font="MajorMonoDisplay-Regular.ttf"
-      fontSize={0.3}
+      fontSize={0.33}
       material-toneMapped={false}
       anchorX="center"
       anchorY="middle"
@@ -73,10 +73,10 @@ const Home = ({
 }) => {
   return (
     <motion.div
-      className="h-screen"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: "2" }}
+      className={"h-screen"}
     >
       <Canvas shadows={true}>
         <Bg darkMode={darkMode} />
