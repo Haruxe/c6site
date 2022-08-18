@@ -6,10 +6,8 @@ import logoWhite from "../public/logoWhiteMin.png";
 import logoBlack from "../public/logoBlackMin.png";
 import Image from "next/image.js";
 import Link from "next/link";
-import { CookiesProvider, useCookies } from "react-cookie";
 import { DarkMode, LightMode } from "styled-icons/material-twotone";
 import { Menu, X } from "styled-icons/feather";
-import { Exit } from "styled-icons/boxicons-regular";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [darkMode, setDarkMode] = useState(false);

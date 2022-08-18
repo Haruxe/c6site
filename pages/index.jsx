@@ -65,19 +65,6 @@ const Home = ({
   scale = Array.from({ length: 100 }, () => 0.5 + Math.random() * 4),
   darkMode,
 }) => {
-  // const [board, setBoard] = useState(<Grant />);
-  // const [toggle, setToggle] = useState(false);
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     if (toggle) {
-  //       setBoard(<Gweeb />);
-  //     } else {
-  //       setBoard(<Grant />);
-  //     }
-
-  //     setToggle(!toggle);
-  //   }, 3000);
-  // }, [toggle]);
   return (
     <motion.div
       initial={{ opacity: 0 }}

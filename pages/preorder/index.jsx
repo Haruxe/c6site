@@ -1,9 +1,31 @@
-import { Canvas, useThree, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { motion } from "framer-motion";
 import { Environment, Text, Sparkles } from "@react-three/drei";
 import { LayerMaterial, Depth, Noise } from "lamina";
 import * as THREE from "three";
-import Navbar from "../../components/Navbar.js";
+import PRODUCTS from "../../components/data.js";
+import ImageList from "@mui/material/ImageList";
+import ImageListItem from "@mui/material/ImageListItem";
+import ImageListItemBar from "@mui/material/ImageListItemBar";
+import Image from "next/image.js";
+import Link from "next/link.js";
+
+function Caption({ children, darkMode }) {
+  return (
+    <Text
+      position={[0, -4.5, 0]}
+      lineHeight={1.4}
+      font="MajorMonoDisplay-Regular.ttf"
+      fontSize={0.4}
+      material-toneMapped={false}
+      anchorX="center"
+      anchorY="middle"
+      color={darkMode ? "white" : "black"}
+    >
+      {children}
+    </Text>
+  );
+}
 
 function Rig({ v = new THREE.Vector3() }) {
   return useFrame((state) => {
@@ -14,14 +36,14 @@ function Rig({ v = new THREE.Vector3() }) {
   });
 }
 
-function Bg() {
+function Bg({ darkMode }) {
   return (
-    <mesh scale={100}>
+    <mesh scale={100} rotation={[0, Math.PI / 4, 0]}>
       <boxGeometry args={[1, 1, 1]} />
       <LayerMaterial side={THREE.BackSide}>
         <Depth
-          colorB="#282952"
-          colorA="black"
+          colorB={darkMode ? "#282952" : "#c1ecf7"}
+          colorA={darkMode ? "black" : "#9c9c9c"}
           alpha={1}
           mode="normal"
           near={130}
@@ -44,23 +66,56 @@ function Bg() {
 
 const Home = ({
   scale = Array.from({ length: 100 }, () => 0.5 + Math.random() * 4),
+  darkMode,
 }) => {
   return (
     <motion.div
+      className="flex place-content-center h-screen"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: ".5" }}
+      transition={{ duration: "2" }}
     >
+      <div className="max-w-[1300px] font-major font-bold md:text-2xl text-sm dark:text-white text-black flex absolute md:mt-[160px] mt-[60px] z-10 mx-auto w-full flex-col space-y-10 p-8">
+        <h1 className="w-full leading-10 text-4xl">Preorder</h1>
+        <ImageList cols={5} gap={20}>
+          {PRODUCTS.map((product) => (
+            <ImageListItem key={product.image}>
+              {/* Product's image*/}
+              <Link href={"/preorder/" + product.name}>
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  width={"1080"}
+                  height={"1080"}
+                  className="cursor-pointer rounded-sm"
+                />
+              </Link>
+              {/* Product's name + price under the image */}
+              <ImageListItemBar
+                title={<span className="font-major">{product.name}</span>}
+                subtitle={
+                  <span className="font-major">Price: {product.price}</span>
+                }
+                position="below"
+              />
+            </ImageListItem>
+          ))}
+        </ImageList>
+      </div>
       <Canvas shadows={true}>
-        <Bg />
-        <color attach="background" args={["#101010"]} />
-        <Environment preset="sunset" />
+        <Bg darkMode={darkMode} />
+        <color
+          attach="background"
+          args={darkMode ? ["#101010"] : ["#969696"]}
+        />
+        <Environment preset="studio" />
         <Sparkles
           count={scale.length}
           size={scale}
           position={[0, 0, 0]}
           scale={[10, 10, 10]}
           speed={0.3}
+          color={darkMode ? "white" : "black"}
         />
       </Canvas>
     </motion.div>

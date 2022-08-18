@@ -9,16 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
+    "@mui/material": "^5.10.1",
     "@react-three/drei": "^9.21.0",
     "@react-three/postprocessing": "^2.6.1",
     "drei": "^2.2.21",
     "framer-motion": "^7.1.0",
     "lamina": "^1.1.23",
+    "mui": "^0.0.1",
     "next": "12.2.4",
     "react": "18.2.0",
     "react-cookie": "^4.1.1",
     "react-cookies": "^0.1.1",
     "react-dom": "18.2.0",
+    "shopify-buy": "^2.16.1",
     "styled-icons": "^10.45.0",
     "three": "^0.143.0",
     "valtio": "^1.6.3"
