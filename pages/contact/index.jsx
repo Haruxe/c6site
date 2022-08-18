@@ -1,9 +1,14 @@
 import { Canvas, useFrame } from "@react-three/fiber";
-import Gweeb from "../components/GweebD.js";
-import Grant from "../components/GrantD.js";
 import { motion } from "framer-motion";
-import { Suspense, useEffect, useState } from "react";
-import { Cloud, Environment, Text, Sparkles, Float } from "@react-three/drei";
+import { Suspense } from "react";
+import {
+  Cloud,
+  Environment,
+  Text,
+  Sparkles,
+  Lightformer,
+  Float,
+} from "@react-three/drei";
 import { LayerMaterial, Depth, Noise } from "lamina";
 import * as THREE from "three";
 
@@ -13,7 +18,7 @@ function Caption({ children, darkMode }) {
       position={[0, -4.5, 0]}
       lineHeight={1.4}
       font="MajorMonoDisplay-Regular.ttf"
-      fontSize={0.33}
+      fontSize={0.4}
       material-toneMapped={false}
       anchorX="center"
       anchorY="middle"
@@ -65,62 +70,35 @@ const Home = ({
   scale = Array.from({ length: 100 }, () => 0.5 + Math.random() * 4),
   darkMode,
 }) => {
-  // const [board, setBoard] = useState(<Grant />);
-  // const [toggle, setToggle] = useState(false);
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     if (toggle) {
-  //       setBoard(<Gweeb />);
-  //     } else {
-  //       setBoard(<Grant />);
-  //     }
-
-  //     setToggle(!toggle);
-  //   }, 3000);
-  // }, [toggle]);
   return (
     <motion.div
+      className="flex place-content-center h-screen"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: "2" }}
-      className={"h-screen"}
     >
+      <div className="max-w-[1300px] font-major font-bold md:text-2xl text-sm dark:text-white text-black flex absolute md:mt-[160px] mt-[60px] z-10 mx-auto w-full flex-col space-y-10 p-8">
+        <h1 className="w-full leading-10 text-4xl">Contact Us</h1>
+        <h1 className="md:w-2/3 w-full leading-10">
+          For any QUESTIONS regarding the boards, materials, and pricing, shoot
+          us an EMAIL at c6boards@gmail.com
+        </h1>
+      </div>
       <Canvas shadows={true}>
         <Bg darkMode={darkMode} />
-        <Cloud
-          position={[0, 0, -5]}
-          depth={1.5}
-          speed={0.2}
-          opacity={0.2}
-          color={darkMode ? "black" : "#9c9c9c"}
-        />
         <color
           attach="background"
-          args={darkMode ? ["#969696"] : ["#101010"]}
+          args={darkMode ? ["#101010"] : ["#969696"]}
         />
         <Environment preset="studio" />
-
-        <Suspense fallback={null}>
-          <Sparkles
-            count={scale.length}
-            size={scale}
-            position={[0, 0, 0]}
-            scale={[10, 10, 10]}
-            speed={0.3}
-            color={darkMode ? "white" : "black"}
-          />
-          <Float
-            speed={2} // Animation speed, defaults to 1
-            floatIntensity={2} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
-            floatingRange={[-0.1, 0.1]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
-          >
-            <Grant />
-          </Float>
-          <Rig />
-          <Caption darkMode={darkMode}>
-            {"the world's first\nTRUE carbon fiber\nsurfboards are HERE."}
-          </Caption>
-        </Suspense>
+        <Sparkles
+          count={scale.length}
+          size={scale}
+          position={[0, 0, 0]}
+          scale={[10, 10, 10]}
+          speed={0.3}
+          color={darkMode ? "white" : "black"}
+        />
       </Canvas>
     </motion.div>
   );

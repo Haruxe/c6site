@@ -93,10 +93,10 @@ const Home = ({
           <a
             href="https://instagram.com/c6surf"
             target={"none"}
-            className=" text-red-200"
+            className=" underline decoration-2 underline-offset-4"
           >
-            INSTAGRAM{" "}
-          </a>
+            INSTAGRAM
+          </a>{" "}
           to stay up to date with official board updates and other dope surf
           content.
         </h1>
