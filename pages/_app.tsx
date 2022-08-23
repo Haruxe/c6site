@@ -144,20 +144,20 @@ function MyApp({ Component, pageProps }: AppProps) {
                     scale: 1.05,
                     textDecoration: "underline",
                   }}
-                  className="my-auto hover:animate-pulse cursor-pointer"
+                  className="my-auto hover:animate-pulse cursor-pointer mr-5"
                 >
                   <Link href="/contact">
                     <h1 className="font-major underline-offset-4 ">Contact</h1>
                   </Link>
                 </motion.div>
-                <motion.div
+                {/* <motion.div
                   whileHover={{ scale: 1.05 }}
                   className="rounded-md py-1 px-2 my-auto border border-1 border-black dark:border-white text-black dark:text-white bg-white dark:bg-black hover:animate-pulse cursor-pointer mx-10"
                 >
                   <Link href="/preorder">
                     <h1 className="font-major">Preorder</h1>
                   </Link>
-                </motion.div>
+                </motion.div> */}
 
                 <motion.div
                   whileHover={{ scale: 1.05 }}

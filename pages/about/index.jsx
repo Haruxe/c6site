@@ -85,8 +85,7 @@ const Home = ({
         </h1>
         <h1 className="md:w-2/3 w-full leading-10">
           compared to its fiberglass counterpart, carbon fiber weighs
-          significantly less and is much more responsive. Did I mention it looks
-          sick too?
+          significantly less and is much more responsive.
         </h1>
         <h1 className="md:w-2/3 w-full leading-10">
           Follow us on{" "}
