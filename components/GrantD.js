@@ -13,7 +13,7 @@ export default function Model({ ...props }) {
   });
   const { nodes, materials } = useGLTF("/GrantD.gltf");
   return (
-    <group ref={group} {...props} dispose={null}>
+    <group ref={group} {...props} dispose={null} position={[0, 1, 0]}>
       <mesh
         geometry={nodes.board.geometry}
         material={materials["Material.001"]}
