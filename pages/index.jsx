@@ -128,26 +128,27 @@ const Home = ({
           >
             <Grant />
           </Float>
+          <Html position={[-1.3, -4, 1]}>
+            <motion.div
+              className="z-30 absolute top-[80%] w-full justify-center"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 2, delay: 3 }}
+            >
+              <Link href="/preorder/1">
+                <motion.h1
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="font-major text-2xl text-black dark:text-white opacity-70 mx-auto bg-white dark:bg-black px-3 py-2 rounded-md outline outline-1 dark:outline-white outline-black justify-center cursor-pointer w-[260px]"
+                >
+                  Join the WAVE
+                </motion.h1>
+              </Link>
+            </motion.div>
+          </Html>
           <Rig />
         </Suspense>
       </Canvas>
-
-      <motion.div
-        className="z-30 absolute top-[80%] w-full justify-center"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 2, delay: 3 }}
-      >
-        <Link href="/preorder/1">
-          <motion.h1
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
-            className="font-major text-2xl text-black dark:text-white opacity-70 mx-auto bg-white dark:bg-black px-3 py-2 rounded-md outline outline-1 dark:outline-white outline-black justify-center cursor-pointer w-[260px]"
-          >
-            Join the WAVE
-          </motion.h1>
-        </Link>
-      </motion.div>
     </motion.div>
   );
 };

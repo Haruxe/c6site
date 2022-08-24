@@ -150,7 +150,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="rounded-md py-1 px-2 my-auto text-white hover:animate-pulse cursor-pointer w-12"
+                className="rounded-md py-1 px-2 my-auto text-white hover:animate-pulse cursor-pointer w-12 z-40"
               >
                 <button onClick={() => setDarkMode(!darkMode)}>
                   {darkMode ? (
