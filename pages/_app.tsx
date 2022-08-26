@@ -104,7 +104,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div className="bg-[#809DBB] dark:bg-black">
       <div className="fixed top-0 right-0 z-20 w-full ">
-        <div className="p-3 max-w-[1300px] flex flex-row mx-auto bg-[#0000000a] rounded-sm">
+        <div className="p-3 max-w-[1300px] flex flex-row mx-auto rounded-sm">
           <div className="flex my-auto">
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -151,15 +151,15 @@ function MyApp({ Component, pageProps }: AppProps) {
 
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="rounded-md py-1 px-2 my-auto text-white hover:animate-pulse cursor-pointer w-12 z-40"
+                className="my-auto text-white hover:animate-pulse cursor-pointer w-8 ml-4"
               >
-                <button onClick={() => setDarkMode(!darkMode)}>
+                <div onClick={() => setDarkMode(!darkMode)}>
                   {darkMode ? (
                     <LightMode />
                   ) : (
                     <DarkMode className="text-black" />
                   )}
-                </button>
+                </div>
               </motion.div>
             </>
           </div>
