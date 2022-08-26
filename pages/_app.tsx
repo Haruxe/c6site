@@ -10,7 +10,7 @@ import { DarkMode, LightMode } from "styled-icons/material-twotone";
 import { Menu, X } from "styled-icons/feather";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   const [open, setOpen] = useState(true);
   useEffect(() => {
     if (darkMode) {
@@ -105,13 +105,16 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <div className="fixed top-0 right-0 z-20 w-full">
         <div className="p-8 max-w-[1300px] flex flex-row mx-auto">
-          <div>
+          <div className="flex my-auto">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="hover:animate-pulse lg:w-10 w-8 cursor-pointer"
+              className="hover:animate-pulse lg:w-10 w-8 cursor-pointer align-middle flex"
             >
-              <Link href="/">
-                <Image src={darkMode ? logoWhite : logoBlack} />
+              <Link href="/" className="my-auto align-middle flex">
+                <Image
+                  src={darkMode ? logoWhite : logoBlack}
+                  className="my-auto flex"
+                />
               </Link>
             </motion.div>
           </div>

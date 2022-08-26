@@ -11,27 +11,11 @@ import {
   Lightformer,
   ContactShadows,
   Stars,
+  Sky,
 } from "@react-three/drei";
 import { LayerMaterial, Depth, Noise } from "lamina";
 import * as THREE from "three";
 import Link from "next/link.js";
-
-function Caption({ children, darkMode }) {
-  return (
-    <Text
-      position={[3, 0, 0]}
-      lineHeight={1.4}
-      font="MajorMonoDisplay-Regular.ttf"
-      fontSize={0.33}
-      material-toneMapped={false}
-      anchorX="center"
-      anchorY="middle"
-      color={darkMode ? "white" : "black"}
-    >
-      {children}
-    </Text>
-  );
-}
 
 function Rig({ v = new THREE.Vector3() }) {
   return useFrame((state) => {
@@ -48,8 +32,8 @@ function Bg({ darkMode }) {
       <boxGeometry args={[1, 1, 1]} />
       <LayerMaterial side={THREE.BackSide}>
         <Depth
-          colorB={darkMode ? "#1e1f41" : "#c0bebd"}
-          colorA={darkMode ? "black" : "#646464"}
+          colorB={darkMode ? "#1e1f41" : "#db9b9b"}
+          colorA={darkMode ? "black" : "#b19a9a"}
           alpha={1}
           mode="normal"
           near={130}
@@ -61,10 +45,7 @@ function Bg({ darkMode }) {
   );
 }
 
-const Home = ({
-  scale = Array.from({ length: 200 }, () => 0.5 + Math.random() * 4),
-  darkMode,
-}) => {
+const Home = ({ darkMode }) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -78,6 +59,7 @@ const Home = ({
           args={darkMode ? ["#0e0f57"] : ["#dddddd"]}
         />
         <Bg darkMode={darkMode} />
+
         <Environment preset="dawn" />
         <ContactShadows
           resolution={1024}
@@ -88,42 +70,44 @@ const Home = ({
           opacity={1}
           far={20}
         />
-        {darkMode && (
-          <Stars
-            radius={100}
-            count={2000}
-            factor={4}
-            saturation={0}
-            fade
-            speed={1}
-            opacity={0.1}
-          />
-        )}
-
+        <Stars
+          radius={100}
+          count={2000}
+          factor={4}
+          saturation={0}
+          fade
+          speed={1}
+          opacity={0.1}
+          color={darkMode ? "white" : "black"}
+        />
         <Suspense fallback={null}>
           <ambientLight intensity={0.5} />
           <Float
-            speed={1.5} // Animation speed, defaults to 1
+            speed={3} // Animation speed, defaults to 1
             floatIntensity={1} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
-            floatingRange={[-0.2, 0.2]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
+            floatingRange={[-0.1, 0.1]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
           >
             <Grant />
+            <Sky />
           </Float>
         </Suspense>
       </Canvas>
-      <div className="fixed bottom-[20%] mx-auto w-full flex">
+      <motion.div
+        className="fixed lg:bottom-[20%] bottom-[15%] mx-auto w-full flex"
+        animate={{ opacity: 1 }}
+        initial={{ opacity: 0 }}
+        transition={{ duration: 1, delay: 3 }}
+      >
         <motion.div
-          className="font-major text-2xl text-black dark:text-white mx-auto bg-white dark:bg-black px-3 py-2 rounded-md outline outline-1 dark:outline-white outline-black justify-center cursor-pointer"
+          className="font-major font-bold lg:text-xl dark:text-black text-white mx-auto dark:bg-white bg-black px-5 py-3 rounded-md justify-center cursor-pointer shadow-2xl opacity-75 animate-pulse"
           whileHover={{ scale: 1.05 }}
-          animate={{ opacity: 1 }}
-          initial={{ opacity: 0 }}
-          transition={{ duration: 1, delay: 3 }}
+          whileTap={{ scale: 0.98 }}
         >
           <Link href="/preorder/1">
-            <h1 className="mx-auto">JOIN THE WAVE</h1>
+            <h1 className="mx-auto">JOIN THE WAITLIST</h1>
           </Link>
         </motion.div>
-      </div>
+      </motion.div>
     </motion.div>
   );
 };
