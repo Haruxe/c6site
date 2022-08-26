@@ -12,6 +12,7 @@ import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 import { useRouter } from "next/router";
 import React from "react";
+import Backdrop from "../../../components/Backdrop";
 
 export default function Home({ darkMode }) {
   const router = useRouter();
@@ -100,20 +101,7 @@ export default function Home({ darkMode }) {
           )}
         </Box>
       </div>
-      <Canvas shadows={true}>
-        <Bg darkMode={darkMode} />
-        <color
-          attach="background"
-          args={darkMode ? ["#101010"] : ["#969696"]}
-        />
-        <Environment preset="studio" />
-        <Sparkles
-          position={[0, 0, 0]}
-          scale={[10, 10, 10]}
-          speed={0.3}
-          color={darkMode ? "white" : "black"}
-        />
-      </Canvas>
+      <Backdrop darkMode={darkMode} />
     </motion.div>
   );
 }

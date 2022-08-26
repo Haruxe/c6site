@@ -7,8 +7,6 @@ import {
   Environment,
   Text,
   Float,
-  OrbitControls,
-  Lightformer,
   ContactShadows,
   Stars,
   Sky,
@@ -16,15 +14,7 @@ import {
 import { LayerMaterial, Depth, Noise } from "lamina";
 import * as THREE from "three";
 import Link from "next/link.js";
-
-function Rig({ v = new THREE.Vector3() }) {
-  return useFrame((state) => {
-    state.camera.position.lerp(
-      v.set(state.mouse.x / 5, state.mouse.y / 5, 10),
-      0.05
-    );
-  });
-}
+import Backdrop from "../components/Backdrop";
 
 function Bg({ darkMode }) {
   return (
@@ -53,45 +43,7 @@ const Home = ({ darkMode }) => {
       transition={{ duration: "4" }}
       className={"h-screen"}
     >
-      <Canvas shadows={true} gl={{ toneMappingExposure: 0.7 }}>
-        <color
-          attach="background"
-          args={darkMode ? ["#0e0f57"] : ["#dddddd"]}
-        />
-        <Bg darkMode={darkMode} />
-
-        <Environment preset="dawn" />
-        <ContactShadows
-          resolution={1024}
-          frames={1}
-          position={[0, -1.16, 0]}
-          scale={15}
-          blur={0.5}
-          opacity={1}
-          far={20}
-        />
-        <Stars
-          radius={100}
-          count={2000}
-          factor={4}
-          saturation={0}
-          fade
-          speed={1}
-          opacity={0.1}
-          color={darkMode ? "white" : "black"}
-        />
-        <Suspense fallback={null}>
-          <ambientLight intensity={0.5} />
-          <Float
-            speed={3} // Animation speed, defaults to 1
-            floatIntensity={1} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
-            floatingRange={[-0.1, 0.1]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
-          >
-            <Grant />
-            <Sky />
-          </Float>
-        </Suspense>
-      </Canvas>
+      <Backdrop darkMode={darkMode} showSplash={true} />
       <motion.div
         className="fixed lg:bottom-[20%] bottom-[15%] mx-auto w-full flex"
         animate={{ opacity: 1 }}

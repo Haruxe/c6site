@@ -9,6 +9,7 @@ import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
 import Image from "next/image.js";
 import Link from "next/link.js";
+import Backdrop from "../../components/Backdrop.js";
 
 function Caption({ children, darkMode }) {
   return (
@@ -102,22 +103,7 @@ const Home = ({
           ))}
         </ImageList>
       </div>
-      <Canvas shadows={true}>
-        <Bg darkMode={darkMode} />
-        <color
-          attach="background"
-          args={darkMode ? ["#101010"] : ["#969696"]}
-        />
-        <Environment preset="studio" />
-        <Sparkles
-          count={scale.length}
-          size={scale}
-          position={[0, 0, 0]}
-          scale={[10, 10, 10]}
-          speed={0.3}
-          color={darkMode ? "white" : "black"}
-        />
-      </Canvas>
+      <Backdrop darkMode={darkMode} />
     </motion.div>
   );
 };
