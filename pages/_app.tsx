@@ -103,7 +103,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <div className="fixed top-0 right-0 z-20 w-full font-bold">
+      <div className="fixed top-0 right-0 z-20 w-full">
         <div className="p-8 max-w-[1300px] flex flex-row mx-auto">
           <div>
             <motion.div
@@ -115,7 +115,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               </Link>
             </motion.div>
           </div>
-          <div className="place-self-end ml-auto text-sm flex my-auto dark:text-white text-black dark:decoration-white decoration-black">
+          <div className="place-self-end ml-auto flex my-auto dark:text-white text-black dark:decoration-white decoration-black">
             <>
               <motion.div
                 whileHover={{

@@ -13,18 +13,18 @@ export default function Model({ ...props }) {
   });
   const { nodes, materials } = useGLTF("/GrantD.gltf");
   return (
-    <group ref={group} {...props} dispose={null} position={[0, 1, 0]}>
+    <group ref={group} {...props} dispose={null} position={[0, 0.8, 0]}>
       <mesh
         geometry={nodes.board.geometry}
         material={materials["Material.001"]}
         rotation={[-Math.PI / 2, -Math.PI / 2, 0]}
-        scale={0.04}
+        scale={0.02}
       />
       <mesh
         geometry={nodes.logoWhite.geometry}
         material={materials.logoWhite}
-        position={[0, 1, -0.08]}
-        scale={0.4}
+        position={[0, -0.4, -0.04]}
+        scale={0.2}
         rotation={[-Math.PI / 2, -Math.PI, 0]}
       />
     </group>

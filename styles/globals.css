@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "MajorMono";
-  src: url("/MajorMonoDisplay-Regular.ttf") format("truetype");
+  font-family: "Mulish-Black";
+  src: url("/fonts/Mulish-Medium.ttf") format("truetype");
 }
 
 .font-major {
-  font-family: "MajorMono";
+  font-family: "Mulish-Black";
 }
 
 body {
