@@ -78,11 +78,11 @@ const Home = ({
       animate={{ opacity: 1 }}
       transition={{ duration: "2" }}
     >
-      <div className="max-w-[1300px] font-major font-bold md:text-2xl text-sm dark:text-white text-black flex absolute md:mt-[160px] mt-[60px] z-10 mx-auto w-full flex-col space-y-10 p-8">
+      <div className="max-w-[1300px] font-major font-bold md:text-2xl text-sm dark:text-white text-black flex absolute md:mt-[160px] mt-[60px] z-10 mx-auto w-full flex-col space-y-5 p-8">
         <h1 className="w-full font-major-black text-4xl">Contact Us</h1>
+        <div className="h-[2px] bg-black w-[5%]" />
         <h1 className="md:w-2/3 w-full leading-10">
-          For any questions, booking appointments etc. send an email to
-          place@holder.com
+          For any questions, send an email to place@holder.com
         </h1>
       </div>
       <Backdrop darkMode={darkMode} />

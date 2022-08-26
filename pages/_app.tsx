@@ -103,8 +103,8 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <div className="bg-[#809DBB] dark:bg-black">
-      <div className="fixed top-0 right-0 z-20 w-full">
-        <div className="p-8 max-w-[1300px] flex flex-row mx-auto">
+      <div className="fixed top-0 right-0 z-20 w-full ">
+        <div className="p-3 max-w-[1300px] flex flex-row mx-auto bg-[#0000000a] rounded-sm">
           <div className="flex my-auto">
             <motion.div
               whileHover={{ scale: 1.05 }}
