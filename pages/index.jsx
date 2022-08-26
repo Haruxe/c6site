@@ -39,7 +39,7 @@ const Home = ({ darkMode }) => {
         transition={{ duration: 1, delay: 3 }}
       >
         <motion.div
-          className="font-major-black text-xl dark:text-black text-white mx-auto dark:bg-white bg-black px-5 py-3 rounded-md justify-center cursor-pointer animate-pulse"
+          className="font-major-black text-xl dark:text-black text-white mx-auto dark:[#b6b6b6] bg-[#525151] px-5 py-3 rounded-md justify-center cursor-pointer animate-pulse"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.98 }}
         >
