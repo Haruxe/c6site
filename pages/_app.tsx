@@ -102,7 +102,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   };
 
   return (
-    <>
+    <div className="bg-[#809DBB] dark:bg-black">
       <div className="fixed top-0 right-0 z-20 w-full">
         <div className="p-8 max-w-[1300px] flex flex-row mx-auto">
           <div className="flex my-auto">
@@ -118,12 +118,11 @@ function MyApp({ Component, pageProps }: AppProps) {
               </Link>
             </motion.div>
           </div>
-          <div className="place-self-end ml-auto flex my-auto dark:text-white text-black dark:decoration-white decoration-black">
+          <div className="place-self-end font-bold ml-auto flex my-auto dark:text-white text-black dark:decoration-white decoration-black">
             <>
               <motion.div
                 whileHover={{
                   scale: 1.05,
-                  textDecoration: "underline",
                 }}
                 className="my-auto hover:animate-pulse cursor-pointer mx-10"
               >
@@ -134,7 +133,6 @@ function MyApp({ Component, pageProps }: AppProps) {
               <motion.div
                 whileHover={{
                   scale: 1.05,
-                  textDecoration: "underline",
                 }}
                 className="my-auto hover:animate-pulse cursor-pointer mr-5"
               >
@@ -168,7 +166,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         </div>
       </div>
       <Component {...pageProps} darkMode={darkMode} size={windowSize} />
-    </>
+    </div>
   );
 }
 

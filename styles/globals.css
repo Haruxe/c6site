@@ -3,15 +3,23 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Mulish-Black";
+  font-family: "Mulish-Regular";
   src: url("/fonts/Mulish-Regular.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Mulish-Black";
+  src: url("/fonts/Mulish-Black.ttf") format("truetype");
+}
+
 .font-major {
+  font-family: "Mulish-Regular";
+}
+
+.font-major-black {
   font-family: "Mulish-Black";
 }
 
 body {
-  background-color: black;
   overflow: hidden;
 }

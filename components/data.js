@@ -1,8 +1,8 @@
 const PRODUCTS = [
   {
     handle: 1,
-    name: "grant",
-    price: "1400.99",
+    name: "Place-Holder",
+    price: "$1400",
     image: "https://i.imgur.com/FUBYdJO.png",
   },
 ];

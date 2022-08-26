@@ -77,7 +77,9 @@ const Home = ({
       transition={{ duration: "2" }}
     >
       <div className="max-w-[1300px] font-major font-bold md:text-2xl text-sm dark:text-white text-black flex absolute md:mt-[160px] mt-[60px] z-10 mx-auto w-full flex-col space-y-10 p-8">
-        <h1 className="w-full leading-10 text-4xl">Preorder</h1>
+        <h1 className="w-full leading-10 font-major-black text-4xl">
+          Preorder
+        </h1>
         <ImageList cols={5} gap={20}>
           {PRODUCTS.map((product) => (
             <ImageListItem key={product.image}>
@@ -94,9 +96,7 @@ const Home = ({
               {/* Product's name + price under the image */}
               <ImageListItemBar
                 title={<span className="font-major">{product.name}</span>}
-                subtitle={
-                  <span className="font-major">Price: {product.price}</span>
-                }
+                subtitle={<span className="font-major">{product.price}</span>}
                 position="below"
               />
             </ImageListItem>
