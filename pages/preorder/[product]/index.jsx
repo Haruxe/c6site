@@ -22,15 +22,6 @@ export default function Home({ darkMode }) {
   const product = router.asPath.substring(10, router.length);
   const { name, image, price } = product || {};
 
-  const Rig = ({ v = new THREE.Vector3() }) => {
-    return useFrame((state) => {
-      state.camera.position.lerp(
-        v.set(state.mouse.x / 10, state.mouse.y / 10, 10),
-        0.05
-      );
-    });
-  };
-
   const Bg = ({ darkMode }) => {
     return (
       <mesh scale={100} rotation={[0, Math.PI / 4, 0]}>

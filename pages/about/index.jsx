@@ -80,14 +80,20 @@ const Home = ({
     >
       <div className="max-w-[1300px] font-major font-bold md:text-2xl text-sm dark:text-white text-black flex absolute md:mt-[160px] mt-[60px] z-10 mx-auto w-full flex-col space-y-5 p-8">
         <h1 className="w-full leading-10 font-major-black text-4xl">About</h1>
-        <div className="h-[2px] bg-black w-[5%]" />
+        <div className="h-[2px] bg-black dark:bg-white w-[5%]" />
         <h1 className="md:w-2/3 w-full leading-10">
-          What started as a hole in the surf market evolved into a passion for
-          fostering community and engineering the best board imagineable.
+          C6 Surf was established in 2021 with the principle goal of
+          revolutionalizing the surf industry. Since the 1960s, surf development
+          has plateaued with the creation of a fiberglass board, and to the
+          present day remains the same until now.
         </h1>
         <h1 className="md:w-2/3 w-full leading-10">
-          compared to its fiberglass counterpart, carbon fiber weighs
-          significantly less and is much more responsive.
+          C6 has wholly rethought the process of creating a board, introduing
+          aerospace-grade carbon fiber technology into surfing. Designed for
+          those who want to push the limits of what the human body can do on a
+          surfboard, these boards allow you to areal higher and land harder. Our
+          goal is to create boards that are stronger, more responsive, lighter,
+          and faster than any boards on the market. Join the C6 revolution.
         </h1>
         <h1 className="md:w-2/3 w-full leading-10">
           Follow our{" "}

@@ -108,7 +108,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <div className="flex my-auto">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="hover:animate-pulse lg:w-10 w-8 cursor-pointer align-middle flex"
+              className="hover:animate-pulse lg:w-10 w-8 cursor-pointer align-middle flex mr-4 md:mr-10"
             >
               <Link href="/" className="my-auto align-middle flex">
                 <Image
@@ -118,13 +118,13 @@ function MyApp({ Component, pageProps }: AppProps) {
               </Link>
             </motion.div>
           </div>
-          <div className="flex my-auto dark:text-white text-black dark:decoration-white decoration-black text-lg">
+          <div className="flex my-auto dark:text-white text-black dark:decoration-white decoration-black md:text-lg text-sm space-x-4 md:space-x-10">
             <>
               <motion.div
                 whileHover={{
                   scale: 1.05,
                 }}
-                className="my-auto hover:animate-pulse cursor-pointer mx-10"
+                className="my-auto hover:animate-pulse cursor-pointer"
               >
                 <Link href="/about">
                   <h1 className="font-major-black underline-offset-4 ">
@@ -136,11 +136,23 @@ function MyApp({ Component, pageProps }: AppProps) {
                 whileHover={{
                   scale: 1.05,
                 }}
-                className="my-auto hover:animate-pulse cursor-pointer mr-5"
+                className="my-auto hover:animate-pulse cursor-pointer"
               >
                 <Link href="/contact">
                   <h1 className="font-major-black underline-offset-4 ">
                     Contact
+                  </h1>
+                </Link>
+              </motion.div>
+              <motion.div
+                whileHover={{
+                  scale: 1.05,
+                }}
+                className="my-auto hover:animate-pulse cursor-pointer"
+              >
+                <Link href="/showroom">
+                  <h1 className="font-major-black underline-offset-4 ">
+                    Showroom
                   </h1>
                 </Link>
               </motion.div>

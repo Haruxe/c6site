@@ -20,7 +20,6 @@ export default function Model({ ...props }) {
         material={materials["Material.001"]}
         rotation={[-Math.PI / 2, -Math.PI / 2, 0]}
         scale={0.02}
-        SmoothShading
       />
       <mesh
         geometry={nodes.logoWhite.geometry}
@@ -28,7 +27,6 @@ export default function Model({ ...props }) {
         position={[0, -0.4, -0.04]}
         scale={0.2}
         rotation={[-Math.PI / 2, -Math.PI, 0]}
-        SmoothShading
       />
     </group>
   );

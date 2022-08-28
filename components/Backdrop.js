@@ -17,6 +17,7 @@ import {
   useGLTF,
   OrbitControls,
   Cloud,
+  SpotLight,
 } from "@react-three/drei";
 import { LayerMaterial, Depth } from "lamina";
 import * as THREE from "three";
@@ -82,7 +83,7 @@ function Backdrop({ darkMode, showSplash }) {
   const [text, setText] = useState(0);
   useEffect(() => {
     setTimeout(() => {
-      if (text < 3) {
+      if (text < 2) {
         setText(text + 1);
       } else {
         setText(0);
@@ -91,24 +92,25 @@ function Backdrop({ darkMode, showSplash }) {
     }, 3000);
   }, [go]);
   return (
-    <Canvas shadows={true} gl={{ toneMappingExposure: 0.7 }}>
+    <Canvas shadows={true}>
       <color attach="background" args={darkMode ? ["#0e0f57"] : ["#dddddd"]} />
       {darkMode && <Bg darkMode={darkMode} />}
-      <Environment preset="dawn" />
+      <Environment preset="sunset" />
       <Stars
         radius={100}
         count={5000}
-        factor={darkMode ? 3 : 1}
+        factor={darkMode ? 4 : 4}
         fade
         speed={1}
         saturation={59}
       />
+
       {!darkMode && (
         <>
           <Sky
-            azimuth={0.1}
-            turbidity={10}
-            rayleigh={0.5}
+            azimuth={1}
+            turbidity={15}
+            rayleigh={0.1}
             inclination={0.6}
             distance={1000}
           />
@@ -116,7 +118,8 @@ function Backdrop({ darkMode, showSplash }) {
       )}
       {showSplash && (
         <Suspense fallback={null}>
-          <ambientLight intensity={0.5} />
+          <ambientLight intensity={1} />
+          <SpotLight position={[0, 4, 0]} opacity={0.2} scale={8} />
           <Float
             speed={3} // Animation speed, defaults to 1
             floatIntensity={1} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
@@ -133,13 +136,7 @@ function Backdrop({ darkMode, showSplash }) {
             outlineOpacity={0.3}
             fillOpacity={1}
           >
-            {text == 0
-              ? "THIS"
-              : text == 1
-              ? "IS"
-              : text == 2
-              ? "PLACE"
-              : "HOLDER"}
+            {text == 0 ? "HUMAN" : text == 1 ? "SPEED" : "DEVICES"}
           </Text>
         </Suspense>
       )}

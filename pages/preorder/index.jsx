@@ -80,6 +80,7 @@ const Home = ({
         <h1 className="w-full leading-10 font-major-black text-4xl">
           Preorder
         </h1>
+        <div className="h-[2px] bg-black w-[5%] dark:bg-white" />
         <ImageList cols={5} gap={20}>
           {PRODUCTS.map((product) => (
             <ImageListItem key={product.image}>

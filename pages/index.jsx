@@ -39,12 +39,12 @@ const Home = ({ darkMode }) => {
         transition={{ duration: 1, delay: 3 }}
       >
         <motion.div
-          className="font-major-black text-xl dark:text-black text-white mx-auto dark:[#b6b6b6] bg-[#525151] px-5 py-3 rounded-md justify-center cursor-pointer animate-pulse"
+          className="font-major-black text-xl dark:text-[#413f3f] text-[#c9c7c7] mx-auto dark:bg-[#c9c7c7] bg-[#413f3f] px-6 py-4 rounded-md justify-center cursor-pointer hover:animate-pulse"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.98 }}
         >
-          <Link href="/preorder">
-            <h1 className="mx-auto">JOIN THE WAITLIST</h1>
+          <Link href="/waitlist">
+            <h1 className="mx-auto">JOIN WAITLIST</h1>
           </Link>
         </motion.div>
       </motion.div>
