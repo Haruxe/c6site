@@ -5,18 +5,13 @@ import {
   useThree,
   useLoader,
 } from "@react-three/fiber";
-import { motion } from "framer-motion";
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import {
   Environment,
   Text,
   Float,
-  ContactShadows,
   Stars,
   Sky,
-  useGLTF,
-  OrbitControls,
-  Cloud,
   SpotLight,
 } from "@react-three/drei";
 import { LayerMaterial, Depth } from "lamina";

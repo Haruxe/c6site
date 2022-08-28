@@ -33,7 +33,7 @@ const Home = ({ darkMode }) => {
     >
       <Backdrop darkMode={darkMode} showSplash={true} />
       <motion.div
-        className="fixed bottom-[20%] mx-auto w-full flex"
+        className="fixed md:bottom-[20%] bottom-[15%] mx-auto w-full flex"
         animate={{ opacity: 1 }}
         initial={{ opacity: 0 }}
         transition={{ duration: 1, delay: 3 }}

@@ -127,13 +127,11 @@ const Home = ({
               <select
                 name="country"
                 id="country"
-                class="text-[#474747] bg-transparent mb-2 mt-1 w-full "
+                className="text-[#474747] bg-transparent mb-2 mt-1 w-full "
                 required={true}
               >
                 <option value="0">Select Country</option>
-                <option selected="" value="United States">
-                  United States
-                </option>
+                <option value="United States">United States</option>
                 <option value="Canada">Canada</option>
                 <option value="Albania">Albania</option>
                 <option value="Algeria">Algeria</option>

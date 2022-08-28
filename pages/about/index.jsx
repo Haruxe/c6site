@@ -1,14 +1,6 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import { motion } from "framer-motion";
-import { Suspense } from "react";
-import {
-  Cloud,
-  Environment,
-  Text,
-  Sparkles,
-  Lightformer,
-  Float,
-} from "@react-three/drei";
+import { Text } from "@react-three/drei";
 import { LayerMaterial, Depth, Noise } from "lamina";
 import * as THREE from "three";
 import Backdrop from "../../components/Backdrop.js";
