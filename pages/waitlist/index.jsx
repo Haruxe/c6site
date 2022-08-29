@@ -10,65 +10,76 @@ import ImageListItemBar from "@mui/material/ImageListItemBar";
 import Image from "next/image.js";
 import Link from "next/link.js";
 import Backdrop from "../../components/Backdrop.js";
-
-function Caption({ children, darkMode }) {
-  return (
-    <Text
-      position={[0, -4.5, 0]}
-      lineHeight={1.4}
-      font="MajorMonoDisplay-Regular.ttf"
-      fontSize={0.4}
-      material-toneMapped={false}
-      anchorX="center"
-      anchorY="middle"
-      color={darkMode ? "white" : "black"}
-    >
-      {children}
-    </Text>
-  );
-}
-
-function Rig({ v = new THREE.Vector3() }) {
-  return useFrame((state) => {
-    state.camera.position.lerp(
-      v.set(state.mouse.x / 10, state.mouse.y / 10, 10),
-      0.05
-    );
-  });
-}
-
-function Bg({ darkMode }) {
-  return (
-    <mesh scale={100} rotation={[0, Math.PI / 4, 0]}>
-      <boxGeometry args={[1, 1, 1]} />
-      <LayerMaterial side={THREE.BackSide}>
-        <Depth
-          colorB={darkMode ? "#282952" : "#c1ecf7"}
-          colorA={darkMode ? "black" : "#9c9c9c"}
-          alpha={1}
-          mode="normal"
-          near={130}
-          far={200}
-          origin={[100, 100, -100]}
-        />
-        <Noise
-          mapping="local"
-          type="white"
-          scale={1000}
-          colorA="white"
-          colorB="black"
-          mode="subtract"
-          alpha={0.2}
-        />
-      </LayerMaterial>
-    </mesh>
-  );
-}
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const Home = ({
   scale = Array.from({ length: 100 }, () => 0.5 + Math.random() * 4),
   darkMode,
 }) => {
+  const [submitted, setSubmitted] = useState(false);
+
+  function Rig({ v = new THREE.Vector3() }) {
+    return useFrame((state) => {
+      state.camera.position.lerp(
+        v.set(state.mouse.x / 10, state.mouse.y / 10, 10),
+        0.05
+      );
+    });
+  }
+
+  function Bg({ darkMode }) {
+    return (
+      <mesh scale={100} rotation={[0, Math.PI / 4, 0]}>
+        <boxGeometry args={[1, 1, 1]} />
+        <LayerMaterial side={THREE.BackSide}>
+          <Depth
+            colorB={darkMode ? "#282952" : "#c1ecf7"}
+            colorA={darkMode ? "black" : "#9c9c9c"}
+            alpha={1}
+            mode="normal"
+            near={130}
+            far={200}
+            origin={[100, 100, -100]}
+          />
+          <Noise
+            mapping="local"
+            type="white"
+            scale={1000}
+            colorA="white"
+            colorB="black"
+            mode="subtract"
+            alpha={0.2}
+          />
+        </LayerMaterial>
+      </mesh>
+    );
+  }
+
+  function onFormSubmit(e) {
+    var params = {
+      name: document.getElementById("name").value,
+      phone: document.getElementById("phone").value,
+      email: document.getElementById("email").value,
+      country: document.getElementById("country").value,
+    };
+    if (
+      params.name != "" &&
+      params.phone != "" &&
+      params.email != "" &&
+      params.country != ""
+    ) {
+      emailjs.send(
+        "service_5pajjw9",
+        "template_sdx6ui4",
+        params,
+        "nbjd4ySeLKQB-3bLu"
+      );
+      setSubmitted(true);
+      return false;
+    }
+  }
+
   return (
     <motion.div
       className="flex place-content-center h-screen"
@@ -76,19 +87,18 @@ const Home = ({
       animate={{ opacity: 1 }}
       transition={{ duration: "2" }}
     >
-      <div className="max-w-[1300px] font-major font-bold md:text-2xl text-sm dark:text-white text-black flex absolute md:mt-[160px] mt-[60px] z-10 mx-auto w-full flex-col space-y-10 md:p-8 p-4">
-        <h1 className="w-full leading-10 font-major-black text-4xl">
-          Join The Waitlist
-        </h1>
-        <div className="h-[2px] bg-black w-[5%] dark:bg-white " />
+      <div className="max-w-[1300px] font-major font-bold md:text-2xl text-sm dark:text-white text-black flex absolute md:mt-[160px] mt-[60px] z-10 mx-auto w-full flex-col space-y-4 md:p-8 p-4">
+        <h1 className="w-full font-major-black text-4xl">Join The Waitlist</h1>
+        <div className="h-[2px] bg-black w-[50px] dark:bg-white " />
         <div className="md:w-2/3 w-full mx-auto">
-          <form className="my-3 mx-auto space-y-8 bg-[#ffffffd0] p-12 rounded-md flex flex-col font-major">
+          <div className="my-3 mx-auto space-y-8 bg-[#ffffffd0] md:p-12 p-6 rounded-md flex flex-col font-major">
             <div>
               <h1 className="text-sm font-major-black text-[#505050]">
                 Your Name *
               </h1>
               <input
                 type={"text"}
+                id="name"
                 className="text-black bg-transparent outline-none text-md mb-2 mt-1"
                 placeholder="Enter your name"
                 required={true}
@@ -102,6 +112,7 @@ const Home = ({
               </h1>
               <input
                 type={"text"}
+                id="email"
                 className="text-black bg-transparent outline-none text-md mb-2 mt-1"
                 placeholder="Enter your email"
                 required={true}
@@ -114,6 +125,7 @@ const Home = ({
               </h1>
               <input
                 type={"text"}
+                id="phone"
                 className="text-black bg-transparent outline-none text-md mb-2 mt-1"
                 placeholder="Enter your phone #"
                 required={true}
@@ -129,8 +141,8 @@ const Home = ({
                 id="country"
                 className="text-[#474747] bg-transparent mb-2 mt-1 w-full "
                 required={true}
+                defaultValue={"United States"}
               >
-                <option value="0">Select Country</option>
                 <option value="United States">United States</option>
                 <option value="Canada">Canada</option>
                 <option value="Albania">Albania</option>
@@ -371,13 +383,20 @@ const Home = ({
               <div className="h-[2px] bg-[#50505056] " />
             </div>
 
-            <motion.input
-              type="submit"
-              className="text-black cursor-pointer bg-gradient-to-r from-indigo-400 to-red-500 rounded-2xl p-3 font-bold w-1/3 mx-auto"
-              value="Submit"
-              whileHover={{ scale: 1.05 }}
-            />
-          </form>
+            {submitted ? (
+              <button className="text-black cursor-default bg-gradient-to-r from-indigo-400 to-red-500 rounded-2xl p-3 font-bold w-1/3 mx-auto">
+                <h1 className="mx-auto">Request Sent!</h1>
+              </button>
+            ) : (
+              <motion.button
+                className="text-black cursor-pointer bg-gradient-to-r from-indigo-400 to-red-500 rounded-2xl p-3 font-bold w-1/3 mx-auto"
+                whileHover={{ scale: 1.05 }}
+                onClick={() => onFormSubmit()}
+              >
+                Submit
+              </motion.button>
+            )}
+          </div>
         </div>
       </div>
       <Backdrop darkMode={darkMode} />
