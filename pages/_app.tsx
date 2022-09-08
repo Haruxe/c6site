@@ -105,7 +105,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <div className="bg-[#809DBB] dark:bg-black">
-        <div className="fixed top-0 right-0 z-20 w-full  ">
+        <div className="fixed top-0 right-0 z-20 w-full bg-[#00000027] ">
           <div className="p-5 max-w-[1300px] flex flex-row mx-auto rounded-sm relative">
             <div className="flex my-auto">
               <motion.div
@@ -122,18 +122,6 @@ function MyApp({ Component, pageProps }: AppProps) {
             </div>
             <div className="flex my-auto dark:text-white text-black dark:decoration-white decoration-black md:text-lg text-sm space-x-4 md:space-x-10">
               <>
-                <motion.div
-                  whileHover={{
-                    scale: 1.05,
-                  }}
-                  className="my-auto hover:animate-pulse cursor-pointer"
-                >
-                  <Link href="/about">
-                    <h1 className="font-major-black underline-offset-4 ">
-                      About
-                    </h1>
-                  </Link>
-                </motion.div>
                 <motion.div
                   whileHover={{
                     scale: 1.05,
@@ -158,6 +146,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                     </h1>
                   </Link>
                 </motion.div>
+
                 {/* <motion.div
                   whileHover={{ scale: 1.05 }}
                   className="rounded-md py-1 px-2 my-auto border border-1 border-black dark:border-white text-black dark:text-white bg-white dark:bg-black hover:animate-pulse cursor-pointer mx-10"
