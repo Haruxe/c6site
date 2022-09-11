@@ -102,7 +102,7 @@ const Home = ({ darkMode }) => {
               </p>
 
               <h1 className="md:text-lg font-major-black mb-1 mx-auto">
-                C6's Process
+                C6&#39;s Process
               </h1>
               <div className="h-[2px] bg-black w-[50px] dark:bg-white my-4" />
               <p className="text-xs md:text-lg">
