@@ -115,7 +115,7 @@ const Home = ({ darkMode }) => {
                 on the market. Join the C6 revolution.
               </p>
             </div>
-            <div className="bg-white dark:bg-black p-2 rounded-md bg-opacity-50 shadow-2xl backdrop-blur-lg md:w-1/3 w-full place-content-center">
+            <div className="bg-white dark:bg-black p-2 rounded-md bg-opacity-50 shadow-2xl backdrop-blur-lg w-1/3 place-content-center">
               <Image
                 src="/shot2.png"
                 layout="responsive"
@@ -151,7 +151,7 @@ const Home = ({ darkMode }) => {
           }
         >
           <div className="place-content-center md:space-x-20 flex md:flex-row flex-col place-items-center max-w-[1300px] w-full relative">
-            <div className="bg-white dark:bg-black p-2 rounded-md bg-opacity-50 shadow-2xl backdrop-blur-lg md:w-1/3 w-full place-content-center">
+            <div className="bg-white dark:bg-black p-2 rounded-md bg-opacity-50 shadow-2xl backdrop-blur-lg w-1/3 place-content-center">
               <Image
                 src="/hey.png"
                 layout="responsive"
@@ -161,7 +161,7 @@ const Home = ({ darkMode }) => {
                 alt="surfboard"
               />
             </div>
-            <div className="md:w-1/2 my-auto bg-white dark:bg-black outline-1 p-5 rounded-md bg-opacity-50 shadow-xl backdrop-blur-sm mb-5">
+            <div className="md:w-1/2 my-auto bg-white dark:bg-black outline-1 p-5 rounded-md bg-opacity-50 shadow-xl backdrop-blur-sm mt-5">
               <h1 className="font-major-black mx-auto lg:mb-12 mb-3 italic font-bold text-center text-xl">
                 Faster, Lighter, <u>Stronger</u>.
               </h1>
@@ -249,7 +249,7 @@ const Home = ({ darkMode }) => {
                 .
               </p>
             </div>
-            <div className="bg-white dark:bg-black p-2 rounded-md bg-opacity-50 shadow-2xl backdrop-blur-lg md:w-1/3 w-full place-content-center">
+            <div className="bg-white dark:bg-black p-2 rounded-md bg-opacity-50 shadow-2xl backdrop-blur-lg w-1/3 place-content-center">
               <Image
                 src="/hey.png"
                 layout="responsive"
