@@ -56,7 +56,7 @@ const Home = ({ darkMode }) => {
             </motion.div>
           </motion.div>
           <div className="max-w-[1400px] mx-auto relative">
-            <motion.div className="absolute bottom-[180px] right-5">
+            <motion.div className="absolute bottom-[80px] right-5">
               <DownArrowAlt className="w-[12vw] lg:w-20 animate-bounce dark:fill-white" />
             </motion.div>
           </div>
