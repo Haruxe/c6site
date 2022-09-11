@@ -104,23 +104,20 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <div className="bg-[#809DBB] dark:bg-black">
-        <div className="fixed top-0 right-0 z-20 w-full bg-[#00000027] ">
-          <div className="p-5 max-w-[1300px] flex flex-row mx-auto rounded-sm relative">
+      <div className="bg-[#70a7da] dark:bg-black">
+        <div className="fixed top-0 right-0 z-20 w-full bg-[#00000060] backdrop-blur-md ">
+          <div className="py-3 px-5 flex flex-row mx-auto rounded-sm relative">
             <div className="flex my-auto">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 className="hover:animate-pulse lg:w-10 w-8 cursor-pointer align-middle flex mr-4 md:mr-10"
               >
                 <Link href="/" className="my-auto align-middle flex">
-                  <Image
-                    src={darkMode ? logoWhite : logoBlack}
-                    className="my-auto flex"
-                  />
+                  <Image src={logoWhite} className="my-auto flex" />
                 </Link>
               </motion.div>
             </div>
-            <div className="flex my-auto dark:text-white text-black dark:decoration-white decoration-black md:text-lg text-sm space-x-4 md:space-x-10">
+            <div className="flex my-auto text-white decoration-white  md:text-lg text-sm space-x-4 md:space-x-10">
               <>
                 <motion.div
                   whileHover={{
@@ -128,9 +125,9 @@ function MyApp({ Component, pageProps }: AppProps) {
                   }}
                   className="my-auto hover:animate-pulse cursor-pointer"
                 >
-                  <Link href="/contact">
-                    <h1 className="font-major-black underline-offset-4 ">
-                      Contact
+                  <Link href="/waitlist">
+                    <h1 className="font-major font-bold underline-offset-4 ">
+                      Waitlist
                     </h1>
                   </Link>
                 </motion.div>
@@ -141,7 +138,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                   className="my-auto hover:animate-pulse cursor-pointer"
                 >
                   <Link href="/showroom">
-                    <h1 className="font-major-black underline-offset-4 ">
+                    <h1 className="font-major font-bold underline-offset-4 ">
                       Showroom
                     </h1>
                   </Link>
@@ -156,16 +153,12 @@ function MyApp({ Component, pageProps }: AppProps) {
                   </Link>
                 </motion.div> */}
 
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  className="my-auto text-white hover:animate-pulse cursor-pointer w-8 right-5 top-5 self-end place-self-end absolute"
-                >
-                  <div onClick={() => setDarkMode(!darkMode)}>
-                    {darkMode ? (
-                      <LightMode />
-                    ) : (
-                      <DarkMode className="text-black" />
-                    )}
+                <motion.div className="my-auto text-white hover:animate-pulse cursor-pointer w-8 right-5 top-3 md:top-4 self-end place-self-end absolute outline-none">
+                  <div
+                    onClick={() => setDarkMode(!darkMode)}
+                    className="my-auto outline-none"
+                  >
+                    {darkMode ? <LightMode /> : <DarkMode />}
                   </div>
                 </motion.div>
               </>

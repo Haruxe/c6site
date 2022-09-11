@@ -106,7 +106,7 @@ function Backdrop({ darkMode, showSplash }) {
             azimuth={1}
             turbidity={15}
             rayleigh={0.1}
-            inclination={0.6}
+            inclination={0.53}
             distance={1000}
           />
         </>
