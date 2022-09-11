@@ -122,6 +122,7 @@ const Home = ({ darkMode }) => {
                 width="150"
                 height="150"
                 className="mx-auto rounded-sm"
+                alt="surfboard"
               />
             </div>
           </div>
@@ -157,6 +158,7 @@ const Home = ({ darkMode }) => {
                 width="150"
                 height="150"
                 className="mx-auto rounded-sm"
+                alt="surfboard"
               />
             </div>
             <div className="md:w-1/2 my-auto bg-white dark:bg-black outline-1 p-5 rounded-md bg-opacity-50 shadow-xl backdrop-blur-sm mb-5">
@@ -254,6 +256,7 @@ const Home = ({ darkMode }) => {
                 width="150"
                 height="150"
                 className="mx-auto rounded-sm"
+                alt="surfboard"
               />
             </div>
           </div>
