@@ -115,7 +115,7 @@ const Home = ({ darkMode }) => {
                 on the market. Join the C6 revolution.
               </p>
             </div>
-            <div className="bg-white dark:bg-black p-2 rounded-md bg-opacity-50 shadow-2xl backdrop-blur-lg w-1/3 place-content-center">
+            <div className="bg-white dark:bg-black p-2 rounded-md bg-opacity-50 shadow-2xl backdrop-blur-lg md:w-1/3 w-2/3 place-content-center">
               <Image
                 src="/shot2.png"
                 layout="responsive"
@@ -151,7 +151,7 @@ const Home = ({ darkMode }) => {
           }
         >
           <div className="place-content-center md:space-x-20 flex md:flex-row flex-col place-items-center max-w-[1300px] w-full relative">
-            <div className="bg-white dark:bg-black p-2 rounded-md bg-opacity-50 shadow-2xl backdrop-blur-lg w-1/3 place-content-center">
+            <div className="bg-white dark:bg-black p-2 rounded-md bg-opacity-50 shadow-2xl backdrop-blur-lg md:w-1/3 w-2/3 place-content-center">
               <Image
                 src="/hey.png"
                 layout="responsive"
@@ -249,9 +249,9 @@ const Home = ({ darkMode }) => {
                 .
               </p>
             </div>
-            <div className="bg-white dark:bg-black p-2 rounded-md bg-opacity-50 shadow-2xl backdrop-blur-lg w-1/3 place-content-center">
+            <div className="bg-white dark:bg-black p-2 rounded-md bg-opacity-50 shadow-2xl backdrop-blur-lg md:w-1/3 w-2/3 place-content-center">
               <Image
-                src="/hey.png"
+                src="/stock3.png"
                 layout="responsive"
                 width="150"
                 height="150"

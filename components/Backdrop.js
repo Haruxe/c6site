@@ -13,11 +13,15 @@ import {
   Stars,
   Sky,
   SpotLight,
+  OrbitControls,
 } from "@react-three/drei";
 import { LayerMaterial, Depth } from "lamina";
 import * as THREE from "three";
 import { Water } from "three-stdlib";
-import Grant from "./GrantD";
+import Board1 from "./board1";
+import Board2 from "./Fishd";
+import Board3 from "./Girlfriend2";
+import Board4 from "./Girlfriendd";
 
 function Bg({ darkMode }) {
   return (
@@ -75,7 +79,9 @@ function Ocean() {
 
 function Backdrop({ darkMode, showSplash }) {
   const [go, setGo] = useState(false);
+  const [goTwo, setGoTwo] = useState(false);
   const [text, setText] = useState(0);
+  const [boardTracker, setBoard] = useState(0);
   useEffect(() => {
     setTimeout(() => {
       if (text < 2) {
@@ -86,6 +92,18 @@ function Backdrop({ darkMode, showSplash }) {
       setGo(!go);
     }, 3000);
   }, [go]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (boardTracker < 3) {
+        setBoard(boardTracker + 1);
+      } else {
+        setBoard(0);
+      }
+      setGoTwo(!goTwo);
+    }, 5000);
+  }, [goTwo]);
+
   return (
     <Canvas shadows={true}>
       <color attach="background" args={darkMode ? ["#0e0f57"] : ["#dddddd"]} />
@@ -120,19 +138,29 @@ function Backdrop({ darkMode, showSplash }) {
             floatIntensity={1} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
             floatingRange={[-0.1, 0.1]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
           >
-            <Grant />
+            {boardTracker == 0 ? (
+              <Board1 />
+            ) : boardTracker == 1 ? (
+              <Board2 />
+            ) : boardTracker == 2 ? (
+              <Board3 />
+            ) : boardTracker == 3 ? (
+              <Board4 />
+            ) : (
+              <></>
+            )}
           </Float>
-          <Text
+          {/* <Text
             font="/fonts/Mulish-Black.ttf"
-            fontSize={"1"}
-            position={[0, 1, -2]}
+            fontSize={".8"}
+            position={[0, -2, -2]}
             color={darkMode ? "#FFFFFF" : "#000000"}
             outlineBlur={1}
             outlineOpacity={0.3}
-            fillOpacity={1}
+            fillOpacity={0.15}
           >
             {text == 0 ? "HUMAN" : text == 1 ? "SPEED" : "DEVICES"}
-          </Text>
+          </Text> */}
         </Suspense>
       )}
     </Canvas>

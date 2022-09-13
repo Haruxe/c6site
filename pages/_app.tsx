@@ -137,11 +137,9 @@ function MyApp({ Component, pageProps }: AppProps) {
                   }}
                   className="my-auto hover:animate-pulse cursor-pointer"
                 >
-                  <Link href="/showroom">
-                    <h1 className="font-major font-bold underline-offset-4 ">
-                      Showroom
-                    </h1>
-                  </Link>
+                  <h1 className="font-major font-bold underline-offset-4 line-through">
+                    Showroom TBA
+                  </h1>
                 </motion.div>
 
                 {/* <motion.div
