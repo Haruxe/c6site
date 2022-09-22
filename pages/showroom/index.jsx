@@ -14,8 +14,8 @@ import * as THREE from "three";
 import Backdrop from "../../components/Backdrop.js";
 import { useRef, useState } from "react";
 import { useSnapshot } from "valtio";
-import { Minimap } from "./Minimap";
-import { state, damp } from "./util";
+import { Minimap } from "../../components/Minimap";
+import { state, damp } from "../../components/util";
 
 function Item({ index, position, scale, c = new THREE.Color(), ...props }) {
   const ref = useRef();
