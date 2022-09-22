@@ -14,6 +14,8 @@ import {
   Sky,
   SpotLight,
   OrbitControls,
+  Html,
+  Preload,
 } from "@react-three/drei";
 import { LayerMaterial, Depth } from "lamina";
 import * as THREE from "three";
@@ -101,7 +103,7 @@ function Backdrop({ darkMode, showSplash }) {
         setBoard(0);
       }
       setGoTwo(!goTwo);
-    }, 5000);
+    }, 10000);
   }, [goTwo]);
 
   return (
@@ -117,7 +119,7 @@ function Backdrop({ darkMode, showSplash }) {
         speed={1}
         saturation={59}
       />
-
+      <Preload all />
       {!darkMode && (
         <>
           <Sky
@@ -138,22 +140,15 @@ function Backdrop({ darkMode, showSplash }) {
             floatIntensity={1} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
             floatingRange={[-0.1, 0.1]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
           >
-            {boardTracker == 0 ? (
-              <Board1 />
-            ) : boardTracker == 1 ? (
-              <Board2 />
-            ) : boardTracker == 2 ? (
-              <Board3 />
-            ) : boardTracker == 3 ? (
-              <Board4 />
-            ) : (
-              <></>
-            )}
+            <Board1 visible={boardTracker !== 0 ? false : true} fade />
+            <Board2 visible={boardTracker !== 1 ? false : true} fade />
+            <Board3 visible={boardTracker !== 2 ? false : true} fade />
+            <Board4 visible={boardTracker !== 3 ? false : true} fade />
           </Float>
           {/* <Text
             font="/fonts/Mulish-Black.ttf"
             fontSize={".8"}
-            position={[0, -2, -2]}
+            position={[0, 0.8, -2]}
             color={darkMode ? "#FFFFFF" : "#000000"}
             outlineBlur={1}
             outlineOpacity={0.3}

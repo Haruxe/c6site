@@ -6,12 +6,12 @@ import logoWhite from "../public/logoWhiteMin.png";
 import logoBlack from "../public/logoBlackMin.png";
 import Image from "next/image.js";
 import Link from "next/link";
-import { DarkMode, LightMode } from "styled-icons/material-twotone";
+import { DarkMode, LightMode, List } from "styled-icons/material-twotone";
 import { Menu, X } from "styled-icons/feather";
 import Head from "next/head";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
   const [open, setOpen] = useState(true);
   useEffect(() => {
     if (darkMode) {
@@ -104,21 +104,43 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <div className="bg-[#70a7da] dark:bg-black">
-        <div className="fixed top-0 right-0 z-20 w-full bg-[#00000060] backdrop-blur-md ">
-          <div className="py-3 px-5 flex flex-row mx-auto rounded-sm relative">
+      <Head>
+        <title>C6 Surf</title>
+        <meta name="description" content="Join the C6 revolution." />
+        <meta name="keywords" content="Surf, Surfboard, C6, carbon fiber" />
+        <meta property="og:url" content="c6surf.com" key="ogurl" />
+        <meta property="og:image" content="/preview.png" key="ogimage" />
+        <meta property="og:site_name" content="C6 Surf" key="ogsitename" />
+        <meta property="og:title" content="C6 Surfboards" key="ogtitle" />
+        <meta
+          property="og:description"
+          content="Join the C6 revolution."
+          key="ogdesc"
+        />
+      </Head>
+      <div className="bg-[#c2c2c2] dark:bg-black">
+        <div className="fixed top-0 right-0 z-20 w-full bg-[#00000060] backdrop-blur-md">
+          <div className="py-3 px-5 flex flex-row mx-auto rounded-sm relative max-w-[1400px]">
             <div className="flex my-auto">
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="hover:animate-pulse lg:w-10 w-8 cursor-pointer align-middle flex mr-4 md:mr-10"
+                className="hover:animate-pulse lg:w-14 w-12 cursor-pointer align-middle flex mr-4 md:mr-10"
               >
                 <Link href="/" className="my-auto align-middle flex">
                   <Image src={logoWhite} className="my-auto flex" />
                 </Link>
               </motion.div>
             </div>
-            <div className="flex my-auto text-white decoration-white  md:text-lg text-sm space-x-4 md:space-x-10">
+            <div className="flex my-auto text-white decoration-white  md:text-lg text-sm space-x-4 md:space-x-10 w-full flex-row">
               <>
+                {/* <Link href="/waitlist" className="my-auto">
+                  <div className="flex flex-row outline outline-1 rounded-lg px-2 py-1 align-middle space-x-1 cursor-pointer hover:bg-gray-600">
+                    <List className="w-6 my-auto flex" />
+                    <h1 className="font-major font-bold underline-offset-4 my-auto flex">
+                      Waitlist
+                    </h1>
+                  </div>
+                </Link> */}
                 <motion.div
                   whileHover={{
                     scale: 1.05,
@@ -126,7 +148,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                   className="my-auto hover:animate-pulse cursor-pointer"
                 >
                   <Link href="/waitlist">
-                    <h1 className="font-major font-bold underline-offset-4 ">
+                    <h1 className="font-major font-bold underline-offset-4">
                       Waitlist
                     </h1>
                   </Link>
@@ -137,11 +159,20 @@ function MyApp({ Component, pageProps }: AppProps) {
                   }}
                   className="my-auto hover:animate-pulse cursor-pointer"
                 >
-                  <h1 className="font-major font-bold underline-offset-4 line-through">
-                    Showroom TBA
-                  </h1>
+                  <Link href="/showroom">
+                    <h1 className="font-major font-bold underline-offset-4">
+                      Showroom
+                    </h1>
+                  </Link>
                 </motion.div>
-
+                <motion.div className="my-auto text-white hover:animate-pulse cursor-pointer w-8 outline-none flex self-end place-self-end">
+                  <div
+                    onClick={() => setDarkMode(!darkMode)}
+                    className="my-auto outline-none"
+                  >
+                    {darkMode ? <LightMode /> : <DarkMode />}
+                  </div>
+                </motion.div>
                 {/* <motion.div
                   whileHover={{ scale: 1.05 }}
                   className="rounded-md py-1 px-2 my-auto border border-1 border-black dark:border-white text-black dark:text-white bg-white dark:bg-black hover:animate-pulse cursor-pointer mx-10"
@@ -150,15 +181,6 @@ function MyApp({ Component, pageProps }: AppProps) {
                     <h1 className="font-major">Preorder</h1>
                   </Link>
                 </motion.div> */}
-
-                <motion.div className="my-auto text-white hover:animate-pulse cursor-pointer w-8 right-5 top-3 md:top-4 self-end place-self-end absolute outline-none">
-                  <div
-                    onClick={() => setDarkMode(!darkMode)}
-                    className="my-auto outline-none"
-                  >
-                    {darkMode ? <LightMode /> : <DarkMode />}
-                  </div>
-                </motion.div>
               </>
             </div>
           </div>

@@ -22,7 +22,7 @@
     "**/*.tsx",
     "pages/index.jsx",
     "components/Navbar.js",
-    "pages/about/index.jsx",
+    "pages/showroom/index.jsx",
     "pages/preorder/index.jsx"
   ],
   "exclude": ["node_modules"]

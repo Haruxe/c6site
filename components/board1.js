@@ -10,7 +10,7 @@ import { SmoothShading } from "three";
 export default function Model({ ...props }) {
   const group = useRef();
   useFrame(({ clock }) => {
-    group.current.rotation.y = clock.getElapsedTime() / 1.2;
+    group.current.rotation.y = clock.getElapsedTime() / 2;
   });
   const { nodes, materials } = useGLTF("/board1d.gltf");
   return (

@@ -88,10 +88,15 @@ const Home = ({
       transition={{ duration: "2" }}
     >
       <div className="max-w-[1300px] font-major font-bold md:text-2xl text-sm dark:text-white text-black flex absolute md:mt-[160px] mt-[60px] z-10 mx-auto w-full flex-col space-y-4 md:p-8 p-4">
-        <h1 className="w-full font-major-black text-4xl">Join The Waitlist</h1>
-        <div className="h-[2px] bg-black w-[50px] dark:bg-white " />
         <div className="md:w-2/3 w-full mx-auto">
-          <div className="my-3 mx-auto space-y-8 bg-[#ffffffd0] md:p-12 p-6 rounded-md flex flex-col font-major">
+          <div className="my-3 mx-auto space-y-8 bg-[#ffffffd0] md:p-12 p-6 rounded-md flex flex-col font-major backdrop-blur-lg">
+            <div>
+              <h1 className="w-full font-major-black text-2xl text-center">
+                Join The Waitlist
+              </h1>
+              <div className="h-[2px] bg-black w-[100px] dark:bg-white mx-auto mt-4 " />
+            </div>
+
             <div>
               <h1 className="text-sm font-major-black text-[#505050]">
                 Your Name *
