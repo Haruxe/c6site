@@ -122,13 +122,7 @@ function Backdrop({ darkMode, showSplash }) {
       <Preload all />
       {!darkMode && (
         <>
-          <Sky
-            azimuth={1}
-            turbidity={15}
-            rayleigh={0.1}
-            inclination={0.53}
-            distance={1000}
-          />
+          <Sky azimuth={1} turbidity={5} rayleigh={0.2} distance={1000} />
         </>
       )}
       {showSplash && (

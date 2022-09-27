@@ -245,7 +245,7 @@ const Home = ({ darkMode }) => {
                   className="underline"
                 >
                   prestonmartin35000@gmail.com
-                </a>{" "}
+                </a>
                 .
               </p>
             </div>
