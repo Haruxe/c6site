@@ -85,13 +85,9 @@ function Backdrop({ darkMode, showSplash }) {
   const [boardTracker, setBoard] = useState(0);
   useEffect(() => {
     setTimeout(() => {
-      if (text < 2) {
-        setText(text + 1);
-      } else {
-        setText(0);
-      }
+      setText(text + 1);
       setGo(!go);
-    }, 3000);
+    }, 1500);
   }, [go]);
 
   useEffect(() => {
@@ -102,7 +98,7 @@ function Backdrop({ darkMode, showSplash }) {
         setBoard(0);
       }
       setGoTwo(!goTwo);
-    }, 10000);
+    }, 8000);
   }, [goTwo]);
 
   return (
@@ -133,7 +129,6 @@ function Backdrop({ darkMode, showSplash }) {
             floatIntensity={1} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
             floatingRange={[-0.1, 0.1]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
           >
-            {/* <OrbitControls /> */}
             <Board1
               visible={boardTracker !== 0 ? false : true}
               fade
@@ -152,14 +147,20 @@ function Backdrop({ darkMode, showSplash }) {
           </Float>
           <Text
             font="/fonts/Mulish-Black.ttf"
-            fontSize={".8"}
-            position={[0, 0.5, -2]}
-            color={darkMode ? "#FFFFFF" : "#000000"}
+            fontSize={".5"}
+            position={[0, 0.4, 1]}
+            color={"#FFFFFF"}
             outlineBlur={0.2}
             outlineOpacity={0.3}
-            fillOpacity={0.4}
+            fillOpacity={1}
           >
-            {text == 0 ? "HUMAN" : text == 1 ? "SPEED" : "DEVICES"}
+            {text == 1
+              ? "HUMAN"
+              : text == 2
+              ? "SPEED"
+              : text == 3
+              ? "DEVICES"
+              : ""}
           </Text>
         </Suspense>
       )}

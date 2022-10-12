@@ -29,15 +29,15 @@ const Home = ({ darkMode }) => {
   return (
     <div>
       <div
-        style={{ scrollSnapType: "y mandatory", overflowY: "scroll" }}
+        //style={{ scrollSnapType: "y mandatory", overflowY: "scroll" }}
         className="w-screen h-screen"
       >
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: "4" }}
+          transition={{ duration: "1" }}
           className={"h-screen relative"}
-          style={{ scrollSnapAlign: "start" }}
+          //style={{ scrollSnapAlign: "start" }}
         >
           <Backdrop darkMode={darkMode} showSplash={true} />
           <motion.div
@@ -55,14 +55,10 @@ const Home = ({ darkMode }) => {
               </Link>
             </motion.div>
           </motion.div>
-          <div className="max-w-[1400px] mx-auto relative">
-            <motion.div className="absolute bottom-[80px] right-5">
-              <DownArrowAlt className="w-[12vw] lg:w-20 animate-bounce dark:fill-white" />
-            </motion.div>
-          </div>
+          <div className="max-w-[1400px] mx-auto relative"></div>
         </motion.div>
         <section
-          className="h-screen dark:text-white text-black font-major place-content-center align-middle place-items-center flex px-8"
+          className=" dark:text-white text-black font-major place-content-center align-middle place-items-center flex px-8 pb-[8rem] pt-[10rem]"
           style={
             !darkMode
               ? {
@@ -103,7 +99,7 @@ const Home = ({ darkMode }) => {
                 Carbon Fiber
               </h1>
               <div className="h-[2px] bg-black w-[50px] dark:bg-white my-4" />
-              <p className=" md:mb-12 mb-3">
+              <p className=" md:mb-12 mb-3 text-xs md:text-sm ">
                 Carbon fiber has{" "}
                 <u>strength properties that are comparable to steel</u> and a
                 weight close to that of plastic. This makes Carbon Fiber an
@@ -115,22 +111,19 @@ const Home = ({ darkMode }) => {
                 Aerospace grade manufacturing
               </h1>
               <div className="h-[2px] bg-black w-[50px] dark:bg-white my-4" />
-              <p>
+              <p className="text-xs md:text-sm ">
                 Advanced composite techniques allow us to create incredibly
                 durable boards that perform <u>exceptionally well</u> even in
                 the harshest conditions. Precise Aerospace resin infusion and
                 vacuum bagging technology define our boards - outlasting,
                 outperforming, and outdoing the competition.
               </p>
-              <motion.div className="absolute bottom-5 right-5">
-                <DownArrowAlt className="w-10 animate-bounce dark:fill-white" />
-              </motion.div>
             </div>
           </div>
         </section>
 
         <section
-          className="h-screen  dark:text-white text-black font-major place-content-center align-middle place-items-center flex px-8"
+          className=" dark:text-white text-black font-major place-content-center align-middle place-items-center flex px-8 pb-[8rem]"
           style={
             !darkMode
               ? {
@@ -164,7 +157,7 @@ const Home = ({ darkMode }) => {
                 Durability
               </h1>
               <div className="h-[2px] bg-black w-[50px] dark:bg-white my-4" />
-              <p className="">
+              <p className="text-xs md:text-sm ">
                 Traditional Surfboards are designed to break, carbon fiber
                 construction is the answer. Using advanced composite techniques
                 we make boards that are <u>engineered to last</u> - reducing
@@ -176,15 +169,12 @@ const Home = ({ darkMode }) => {
                 Sustainablity
               </h1>
               <div className="h-[2px] bg-black w-[50px] dark:bg-white my-4" />
-              <p className="">
+              <p className="text-xs md:text-sm ">
                 Our boards last <u>2 to 3 times longer</u> than traditional
                 fiberglass boards. Our blanks are made of{" "}
                 <u>recycled materials</u>. And we use <u>Bio-resin</u> to reduce
                 our impact on the environment.
               </p>
-              <motion.div className="absolute bottom-5 right-5">
-                <DownArrowAlt className="w-10 animate-bounce dark:fill-white" />
-              </motion.div>
             </div>
             <div className="bg-white dark:bg-black p-2 rounded-md bg-opacity-50 shadow-2xl backdrop-blur-lg md:w-1/3 w-2/3 place-content-center">
               <Image
@@ -199,7 +189,7 @@ const Home = ({ darkMode }) => {
           </div>
         </section>
         <section
-          className="h-screen  dark:text-white text-black font-major place-content-center align-middle place-items-center flex px-8"
+          className=" dark:text-white text-black font-major place-content-center align-middle place-items-center flex px-8 pb-[8rem]"
           style={
             !darkMode
               ? {
@@ -221,6 +211,16 @@ const Home = ({ darkMode }) => {
           }
         >
           <div className="place-content-center md:space-x-20 flex md:flex-row flex-col place-items-center max-w-[1300px] w-full relative">
+            <div className="bg-white dark:bg-black p-2 rounded-md bg-opacity-50 shadow-2xl backdrop-blur-lg md:w-1/3 w-2/3 place-content-center mb-10">
+              <Image
+                src="/shot2.png"
+                layout="responsive"
+                width="150"
+                height="150"
+                className="mx-auto rounded-sm"
+                alt="surfboard"
+              />
+            </div>
             <div className="md:w-1/2 my-auto bg-white dark:bg-black outline-1 p-5 rounded-md bg-opacity-50 shadow-xl backdrop-blur-sm mb-5">
               <h1 className="font-major-black mx-auto lg:mb-12 mb-3 italic font-bold text-center text-xl">
                 Humble beginnings.
@@ -230,7 +230,7 @@ const Home = ({ darkMode }) => {
                 The Origin
               </h1>
               <div className="h-[2px] bg-black w-[50px] dark:bg-white my-4" />
-              <p className=" md:mb-12 mb-3">
+              <p className=" md:mb-12 mb-3 text-xs md:text-sm ">
                 C6 Surf was established in 2021 by two 21-year-olds with the
                 principal goal of revolutionizing the surf industry. Since the
                 1960s, surf development has plateaued with the creation of a
@@ -242,7 +242,7 @@ const Home = ({ darkMode }) => {
                 C6&#39;s Process
               </h1>
               <div className="h-[2px] bg-black w-[50px] dark:bg-white my-4" />
-              <p className="">
+              <p className="text-xs md:text-sm ">
                 C6 has wholly rethought the process of creating a board,
                 introducing aerospace-grade carbon fiber technology into
                 surfing. Designed for those who want to push the limits of what
@@ -251,16 +251,6 @@ const Home = ({ darkMode }) => {
                 are stronger, more responsive, lighter, and faster than any
                 boards on the market. Join the C6 revolution.
               </p>
-            </div>
-            <div className="bg-white dark:bg-black p-2 rounded-md bg-opacity-50 shadow-2xl backdrop-blur-lg md:w-1/3 w-2/3 place-content-center">
-              <Image
-                src="/shot2.png"
-                layout="responsive"
-                width="150"
-                height="150"
-                className="mx-auto rounded-sm"
-                alt="surfboard"
-              />
             </div>
           </div>
         </section>

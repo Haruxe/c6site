@@ -128,7 +128,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 </Link>
               </motion.div>
             </div>
-            <div className="flex my-auto text-white font-major decoration-white md:text-md text-sm space-x-4 md:space-x-10 w-full flex-row">
+            <div className="flex my-auto text-white font-major decoration-white md:text-md sm:text-sm text-xs space-x-4 md:space-x-10 w-full flex-row">
               <>
                 <motion.div className="my-auto hover:animate-pulse cursor-pointer">
                   <Link href="/waitlist">
