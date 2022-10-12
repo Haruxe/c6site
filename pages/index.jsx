@@ -41,7 +41,7 @@ const Home = ({ darkMode }) => {
         >
           <Backdrop darkMode={darkMode} showSplash={true} />
           <motion.div
-            className="absolute md:bottom-[20%] bottom-[15%] mx-auto w-full flex"
+            className="absolute md:bottom-[14%] bottom-[15%] mx-auto w-full flex"
             animate={{ opacity: 1 }}
             initial={{ opacity: 0 }}
             transition={{ duration: 1, delay: 3 }}
@@ -68,7 +68,7 @@ const Home = ({ darkMode }) => {
               ? {
                   scrollSnapAlign: "start",
                   backgroundColor: "#e5e5f7",
-                  opacity: "0.8",
+                  opacity: "1",
                   backgroundImage:
                     "radial-gradient(#5f5f5f 0.35000000000000003px, #e5e5f7 0.35000000000000003px)",
                   backgroundSize: "27px 27px",
@@ -136,7 +136,7 @@ const Home = ({ darkMode }) => {
               ? {
                   scrollSnapAlign: "start",
                   backgroundColor: "#e5e5f7",
-                  opacity: "0.8",
+                  opacity: "1",
                   backgroundImage:
                     "radial-gradient(#5f5f5f 0.35000000000000003px, #e5e5f7 0.35000000000000003px)",
                   backgroundSize: "27px 27px",
@@ -205,7 +205,7 @@ const Home = ({ darkMode }) => {
               ? {
                   scrollSnapAlign: "start",
                   backgroundColor: "#e5e5f7",
-                  opacity: "0.8",
+                  opacity: "1",
                   backgroundImage:
                     "radial-gradient(#5f5f5f 0.35000000000000003px, #e5e5f7 0.35000000000000003px)",
                   backgroundSize: "27px 27px",

@@ -13,7 +13,7 @@ export default function Model({ ...props }) {
     group.current.rotation.y = clock.getElapsedTime() / 2;
   });
   return (
-    <group ref={group} {...props} dispose={null} scale=".018">
+    <group ref={group} {...props} dispose={null} scale=".010">
       <mesh
         geometry={nodes.board2001.geometry}
         material={materials["Material.005"]}
@@ -31,9 +31,9 @@ export default function Model({ ...props }) {
         <mesh
           geometry={nodes.logoWhite003.geometry}
           material={materials["logoWhite.001"]}
-          position={[-13.55, 0.59, 4.06]}
+          position={[-3.55, 0, 5.06]}
           rotation={[2.98, -1.57, 1.42]}
-          scale={12.34}
+          scale={10}
         />
       </mesh>
     </group>

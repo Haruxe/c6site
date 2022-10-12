@@ -133,21 +133,34 @@ function Backdrop({ darkMode, showSplash }) {
             floatIntensity={1} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
             floatingRange={[-0.1, 0.1]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
           >
-            <Board1 visible={boardTracker !== 0 ? false : true} fade />
-            <Board2 visible={boardTracker !== 1 ? false : true} fade />
-            <Board3 visible={boardTracker !== 2 ? false : true} fade />
+            {/* <OrbitControls /> */}
+            <Board1
+              visible={boardTracker !== 0 ? false : true}
+              fade
+              position={[0, 0.3, 0]}
+            />
+            <Board2
+              visible={boardTracker !== 1 ? false : true}
+              fade
+              position={[0, 0.3, 0]}
+            />
+            <Board3
+              visible={boardTracker !== 2 ? false : true}
+              fade
+              position={[0, 0.3, 0]}
+            />
           </Float>
-          {/* <Text
+          <Text
             font="/fonts/Mulish-Black.ttf"
             fontSize={".8"}
-            position={[0, 0.8, -2]}
+            position={[0, 0.5, -2]}
             color={darkMode ? "#FFFFFF" : "#000000"}
-            outlineBlur={1}
+            outlineBlur={0.2}
             outlineOpacity={0.3}
-            fillOpacity={0.15}
+            fillOpacity={0.4}
           >
             {text == 0 ? "HUMAN" : text == 1 ? "SPEED" : "DEVICES"}
-          </Text> */}
+          </Text>
         </Suspense>
       )}
     </Canvas>

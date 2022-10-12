@@ -86,29 +86,27 @@ const Home = ({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: "2" }}
+      style={
+        !darkMode
+          ? {
+              scrollSnapAlign: "start",
+              backgroundColor: "#e5e5f7",
+              opacity: "1",
+              backgroundImage:
+                "radial-gradient(#5f5f5f 0.35000000000000003px, #e5e5f7 0.35000000000000003px)",
+              backgroundSize: "27px 27px",
+            }
+          : {
+              scrollSnapAlign: "start",
+              backgroundColor: "#080830",
+              opacity: "1",
+              backgroundImage:
+                "radial-gradient(#6d6d8f 0.35000000000000003px, #080830 0.35000000000000003px)",
+              backgroundSize: "27px 27px",
+            }
+      }
     >
-      <div
-        style={
-          !darkMode
-            ? {
-                scrollSnapAlign: "start",
-                backgroundColor: "#e5e5f7",
-                opacity: "0.8",
-                backgroundImage:
-                  "radial-gradient(#5f5f5f 0.35000000000000003px, #e5e5f7 0.35000000000000003px)",
-                backgroundSize: "27px 27px",
-              }
-            : {
-                scrollSnapAlign: "start",
-                backgroundColor: "#080830",
-                opacity: "1",
-                backgroundImage:
-                  "radial-gradient(#6d6d8f 0.35000000000000003px, #080830 0.35000000000000003px)",
-                backgroundSize: "27px 27px",
-              }
-        }
-        className="max-w-[1300px] h-full font-major font-bold md:text-lg text-sm text-black flex absolute mt-[60px] z-10 mx-auto w-full flex-col space-y-4 md:p-8 p-4"
-      >
+      <div className="max-w-[1300px] h-full font-major font-bold md:text-lg text-sm text-black flex absolute mt-[60px] z-10 mx-auto w-full flex-col space-y-4 md:p-8 p-4">
         <div className="md:w-2/3 w-full mx-auto">
           <div className="my-3 mx-auto space-y-8 bg-[#ffffffd0] md:p-12 p-6 rounded-md flex flex-col font-major backdrop-blur-lg">
             <div>

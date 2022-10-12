@@ -17,7 +17,7 @@ function index({ darkMode }) {
               ? {
                   scrollSnapAlign: "start",
                   backgroundColor: "#e5e5f7",
-                  opacity: "0.8",
+                  opacity: "1",
                   backgroundImage:
                     "radial-gradient(#5f5f5f 0.35000000000000003px, #e5e5f7 0.35000000000000003px)",
                   backgroundSize: "27px 27px",
@@ -99,7 +99,7 @@ function index({ darkMode }) {
               ? {
                   scrollSnapAlign: "start",
                   backgroundColor: "#e5e5f7",
-                  opacity: "0.8",
+                  opacity: "1",
                   backgroundImage:
                     "radial-gradient(#5f5f5f 0.35000000000000003px, #e5e5f7 0.35000000000000003px)",
                   backgroundSize: "27px 27px",
@@ -177,7 +177,7 @@ function index({ darkMode }) {
               ? {
                   scrollSnapAlign: "start",
                   backgroundColor: "#e5e5f7",
-                  opacity: "0.8",
+                  opacity: "1",
                   backgroundImage:
                     "radial-gradient(#5f5f5f 0.35000000000000003px, #e5e5f7 0.35000000000000003px)",
                   backgroundSize: "27px 27px",
@@ -242,7 +242,7 @@ function index({ darkMode }) {
               ? {
                   scrollSnapAlign: "start",
                   backgroundColor: "#e5e5f7",
-                  opacity: "0.8",
+                  opacity: "1",
                   backgroundImage:
                     "radial-gradient(#5f5f5f 0.35000000000000003px, #e5e5f7 0.35000000000000003px)",
                   backgroundSize: "27px 27px",

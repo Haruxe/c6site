@@ -161,43 +161,39 @@ function Bg({ darkMode }) {
   );
 }
 
-const Home = ({
-  scale = Array.from({ length: 100 }, () => 0.5 + Math.random() * 4),
-  darkMode,
-}) => {
+const Home = ({ darkMode }) => {
   return (
     <motion.div
       className="flex place-content-center h-screen"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: "2" }}
+      style={
+        !darkMode
+          ? {
+              scrollSnapAlign: "start",
+              backgroundColor: "#e5e5f7",
+              opacity: "1",
+              backgroundImage:
+                "radial-gradient(#5f5f5f 0.35000000000000003px, #e5e5f7 0.35000000000000003px)",
+              backgroundSize: "27px 27px",
+            }
+          : {
+              scrollSnapAlign: "start",
+              backgroundColor: "#080830",
+              opacity: "1",
+              backgroundImage:
+                "radial-gradient(#6d6d8f 0.35000000000000003px, #080830 0.35000000000000003px)",
+              backgroundSize: "27px 27px",
+            }
+      }
     >
       <Canvas
         gl={{ antialias: false }}
         dpr={[1, 1.5]}
         onPointerMissed={() => (state.clicked = null)}
-        className="mx-auto h-screen"
+        className="mx-auto h-screen bg-black bg-opacity-30"
       >
-        <Stars
-          radius={100}
-          count={5000}
-          factor={darkMode ? 4 : 4}
-          fade
-          speed={1}
-          saturation={59}
-        />
-        {!darkMode && (
-          <>
-            <Sky
-              azimuth={1}
-              turbidity={15}
-              rayleigh={0.1}
-              inclination={0.53}
-              distance={1000}
-            />
-          </>
-        )}
-
         <Items />
       </Canvas>
     </motion.div>

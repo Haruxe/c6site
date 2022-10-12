@@ -8,7 +8,7 @@ import { useFrame } from "react-three-fiber";
 
 export default function Model({ ...props }) {
   const group = useRef();
-  const { nodes, materials } = useGLTF("/BOARD3_D.gltf");
+  const { nodes, materials } = useGLTF("/BOARD1_D.gltf");
   useFrame(({ clock }) => {
     group.current.rotation.y = clock.getElapsedTime() / 2;
   });
@@ -30,9 +30,9 @@ export default function Model({ ...props }) {
         <mesh
           geometry={nodes.logoWhite001.geometry}
           material={materials["logoWhite.002"]}
-          position={[23.38, -1.09, 6.62]}
+          position={[10.38, -1.09, 6.62]}
           rotation={[0.18, -1.57, -1.43]}
-          scale={16.35}
+          scale={10}
         />
       </mesh>
     </group>
