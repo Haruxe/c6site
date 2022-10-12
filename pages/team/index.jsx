@@ -141,14 +141,14 @@ function index({ darkMode }) {
                 purest emotion, that of just getting on the wave, with no
                 thoughts. Pure joy.
                 <br /> <br /> Are you wondering how surfing in Italy is?
-                There&#8217;s an old saying that says it all: "As long as there
-                is foam, then there is hope"; Italy's first surf guru D.P. once
-                said. It perfectly narrates Italian's romantic vision of surfing
-                in Maremma Toscana, the innocent and tribal land. In this land
-                kissed by the Mediterranean sea - that has apparently nothing to
-                do with quality surfing - Roberto surfed his whole life in the
-                best-unexpected waves. Roberto met Preston on that small sea, on
-                a hot day in September 2021.
+                There&#8217;s an old saying that says it all: &quot;As long as
+                there is foam, then there is hope&quot;; Italy&apos;s first surf
+                guru D.P. once said. It perfectly narrates Italian&apos;s
+                romantic vision of surfing in Maremma Toscana, the innocent and
+                tribal land. In this land kissed by the Mediterranean sea - that
+                has apparently nothing to do with quality surfing - Roberto
+                surfed his whole life in the best-unexpected waves. Roberto met
+                Preston on that small sea, on a hot day in September 2021.
                 <br /> <br /> Since then, they started dreaming of making
                 surfboards together. That dream hit execution and BOB Surfboards
                 by C6 glassing carbon fiber boards are here, already giving the
@@ -195,10 +195,10 @@ function index({ darkMode }) {
           <div className="place-content-center md:space-x-20 flex md:flex-row flex-col place-items-center max-w-[1300px] w-full relative">
             <div className="md:w-1/2 my-auto bg-white dark:bg-black outline-1 p-5 rounded-md bg-opacity-50 shadow-xl backdrop-blur-sm mt-5">
               <h1 className="font-major-black mx-auto text-center text-xl">
-                Roberto Guicciardini
+                Bryce Mattox
               </h1>
               <h1 className="font-major opacity-40 mx-auto lg:mb-12 mb-3 text-center text-lg">
-                Bob Surfboards
+                Co-Founder of C6
               </h1>
               <h1 className="md:text-lg font-major-black mb-1 mx-auto">
                 About
@@ -211,13 +211,13 @@ function index({ darkMode }) {
                 since. When he is having a bad day, there is something magical
                 to him about riding a wave that sets his head straight and
                 allows problems to dissolve.
-                <br /> <br /> Bryce's close friend Hayden Stein introduced him
-                to Preston Martin freshman year of college and they have
+                <br /> <br /> Bryce&apos;s close friend Hayden Stein introduced
+                him to Preston Martin freshman year of college and they have
                 dedicated a large chunk of their lives to creating a perfect
                 carbon fiber vacuum bagged surfboard. Growing up, Bryce never
                 imagined that he would be making surfboards, but it seemed like
-                god laid a path in front of him and is holding the team's hand
-                through this journey.
+                god laid a path in front of him and is holding the team&apos;s
+                hand through this journey.
               </p>
               <motion.div className="absolute bottom-5 right-5">
                 <DownArrowAlt className="w-10 animate-bounce dark:fill-white" />
@@ -273,7 +273,7 @@ function index({ darkMode }) {
                 Nathan Figueroa
               </h1>
               <h1 className="font-major opacity-40 mx-auto lg:mb-12 mb-3 text-center text-lg">
-                Lead Fabricator/ Quality Assurance
+                Lead Fabricator/Quality Assurance
               </h1>
 
               <h1 className="md:text-lg font-major-black mb-1 mx-auto">
@@ -294,8 +294,8 @@ function index({ darkMode }) {
                 coincidentally met Preston and Bryce who had the knowledge he
                 needed to build a vacuum-bagged carbon fiber surfboard. After
                 working together for months to perfect our boards, Nate has
-                become confident in the team's work and is excited for what is
-                to come.
+                become confident in the team&apos;s work and is excited for what
+                is to come.
               </p>
             </div>
           </div>

@@ -20,10 +20,9 @@ import {
 import { LayerMaterial, Depth } from "lamina";
 import * as THREE from "three";
 import { Water } from "three-stdlib";
-import Board1 from "./board1";
-import Board2 from "./Fishd";
-import Board3 from "./Girlfriend2";
-import Board4 from "./Girlfriendd";
+import Board1 from "./BOARD1_D";
+import Board2 from "./BOARD2_D";
+import Board3 from "./BOARD3_D";
 
 function Bg({ darkMode }) {
   return (
@@ -97,7 +96,7 @@ function Backdrop({ darkMode, showSplash }) {
 
   useEffect(() => {
     setTimeout(() => {
-      if (boardTracker < 3) {
+      if (boardTracker < 2) {
         setBoard(boardTracker + 1);
       } else {
         setBoard(0);
@@ -137,7 +136,6 @@ function Backdrop({ darkMode, showSplash }) {
             <Board1 visible={boardTracker !== 0 ? false : true} fade />
             <Board2 visible={boardTracker !== 1 ? false : true} fade />
             <Board3 visible={boardTracker !== 2 ? false : true} fade />
-            <Board4 visible={boardTracker !== 3 ? false : true} fade />
           </Float>
           {/* <Text
             font="/fonts/Mulish-Black.ttf"
