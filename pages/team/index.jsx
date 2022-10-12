@@ -149,12 +149,12 @@ function index({ darkMode }) {
                 thoughts. Pure joy.&quot; thoughts. Pure joy.
                 <br /> <br /> Are you wondering what surfing in Italy is like?
                 There&apos;s an old saying: &quot;As long as there is foam, then
-                there is hope&quot;; Italy's first surf guru D.P. once said. It
-                perfectly narrates Bob's romantic view of surfing in Maremma
-                Toscana, the innocent and tribal land. In this land kissed by
-                the Mediterranean sea, Roberto surfed his whole life in the
-                best-unexpected waves. Roberto met Preston on that small sea, on
-                a hot day in September 2021.
+                there is hope&quot;; Italy&apos;s first surf guru D.P. once
+                said. It perfectly narrates Bob&apos;s romantic view of surfing
+                in Maremma Toscana, the innocent and tribal land. In this land
+                kissed by the Mediterranean sea, Roberto surfed his whole life
+                in the best-unexpected waves. Roberto met Preston on that small
+                sea, on a hot day in September 2021.
                 <br /> <br /> Since then, they started dreaming of making
                 surfboards together. That dream became a reality and BOB
                 Surfboards by C6 glassing carbon fiber boards are here, bringing
