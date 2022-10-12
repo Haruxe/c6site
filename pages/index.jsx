@@ -61,75 +61,8 @@ const Home = ({ darkMode }) => {
             </motion.div>
           </div>
         </motion.div>
-
         <section
-          className="h-screen  dark:text-white text-black font-major place-content-center align-middle place-items-center flex px-8"
-          style={
-            !darkMode
-              ? {
-                  scrollSnapAlign: "start",
-                  backgroundColor: "#e5e5f7",
-                  opacity: "0.8",
-                  backgroundImage:
-                    "radial-gradient(#5f5f5f 0.35000000000000003px, #e5e5f7 0.35000000000000003px)",
-                  backgroundSize: "27px 27px",
-                }
-              : {
-                  scrollSnapAlign: "start",
-                  backgroundColor: "#080830",
-                  opacity: "1",
-                  backgroundImage:
-                    "radial-gradient(#6d6d8f 0.35000000000000003px, #080830 0.35000000000000003px)",
-                  backgroundSize: "27px 27px",
-                }
-          }
-        >
-          <div className="place-content-center md:space-x-20 flex md:flex-row flex-col place-items-center max-w-[1300px] w-full relative">
-            <div className="md:w-1/2 my-auto bg-white dark:bg-black outline-1 p-5 rounded-md bg-opacity-50 shadow-xl backdrop-blur-sm mb-5">
-              <h1 className="font-major-black mx-auto lg:mb-12 mb-3 italic font-bold text-center text-xl">
-                Humble beginnings.
-              </h1>
-
-              <h1 className="md:text-lg font-major-black mb-1 mx-auto">
-                The Origin
-              </h1>
-              <div className="h-[2px] bg-black w-[50px] dark:bg-white my-4" />
-              <p className="text-xs md:text-lg md:mb-12 mb-3">
-                C6 Surf was established in 2021 with the principle goal of
-                revolutionalizing the surf industry. Since the 1960s, surf
-                development has plateaued with the creation of a fiberglass
-                board, and to the present day remains the same until now.
-              </p>
-
-              <h1 className="md:text-lg font-major-black mb-1 mx-auto">
-                C6&#39;s Process
-              </h1>
-              <div className="h-[2px] bg-black w-[50px] dark:bg-white my-4" />
-              <p className="text-xs md:text-lg">
-                C6 has wholly rethought the process of creating a board,
-                introduing aerospace-grade carbon fiber technology into surfing.
-                Designed for those who want to push the limits of what the human
-                body can do on a surfboard, these boards allow you to areal
-                higher and land harder. Our goal is to create boards that are
-                stronger, more responsive, lighter, and faster than any boards
-                on the market. Join the C6 revolution.
-              </p>
-            </div>
-            <div className="bg-white dark:bg-black p-2 rounded-md bg-opacity-50 shadow-2xl backdrop-blur-lg md:w-1/3 w-2/3 place-content-center">
-              <Image
-                src="/shot2.png"
-                layout="responsive"
-                width="150"
-                height="150"
-                className="mx-auto rounded-sm"
-                alt="surfboard"
-              />
-            </div>
-          </div>
-        </section>
-
-        <section
-          className="h-screen  dark:text-white text-black font-major place-content-center align-middle place-items-center flex px-8"
+          className="h-screen dark:text-white text-black font-major place-content-center align-middle place-items-center flex px-8"
           style={
             !darkMode
               ? {
@@ -170,23 +103,28 @@ const Home = ({ darkMode }) => {
                 Carbon Fiber
               </h1>
               <div className="h-[2px] bg-black w-[50px] dark:bg-white my-4" />
-              <p className="text-xs md:text-lg md:mb-12 mb-3">
-                Carbon fiber is composed of carbon atoms bonded together to form
-                a long chain. Its properties are close to that of steel and the
-                weight is close to that of plastic.
+              <p className=" md:mb-12 mb-3">
+                Carbon fiber has{" "}
+                <u>strength properties that are comparable to steel</u> and a
+                weight close to that of plastic. This makes Carbon Fiber an
+                ideal material for high-performance applications that need to be
+                <u>light and strong.</u>
               </p>
 
               <h1 className="md:text-lg font-major-black mb-1 mx-auto">
                 Aerospace grade manufacturing
               </h1>
               <div className="h-[2px] bg-black w-[50px] dark:bg-white my-4" />
-              <p className="text-xs md:text-lg">
+              <p>
                 Advanced composite techniques allow us to create incredibly
-                durable boards that perform <u>exceptionally</u> well even in
+                durable boards that perform <u>exceptionally well</u> even in
                 the harshest conditions. Precise Aerospace resin infusion and
                 vacuum bagging technology define our boards - outlasting,
                 outperforming, and outdoing the competition.
               </p>
+              <motion.div className="absolute bottom-5 right-5">
+                <DownArrowAlt className="w-10 animate-bounce dark:fill-white" />
+              </motion.div>
             </div>
           </div>
         </section>
@@ -226,32 +164,97 @@ const Home = ({ darkMode }) => {
                 Durability
               </h1>
               <div className="h-[2px] bg-black w-[50px] dark:bg-white my-4" />
-              <p className="text-xs md:text-lg">
-                Surfboards have always seemed to be designed to break, carbon
-                fiber is the answer. We are branching out with the tools and the
-                understanding we had gained - to implement the technological
-                advancements that have been made in composite engineering to the
-                surfboard.
+              <p className="">
+                Traditional Surfboards are designed to break, carbon fiber
+                construction is the answer. Using advanced composite techniques
+                we make boards that are <u>engineered to last</u> - reducing
+                waste and increasing the sustainability of the surf industry
+                through a{" "}
+                <u>reduction of waste and ethically sourced materials</u>.
               </p>
               <h1 className="md:text-lg font-major-black mb-1 mx-auto mt-7">
-                Reach Us
+                Sustainablity
               </h1>
               <div className="h-[2px] bg-black w-[50px] dark:bg-white my-4" />
-              <p className="text-xs md:text-lg">
-                For any questions about the process or information regarding the
-                waitlist, reach out to{" "}
-                <a
-                  href={"mailto:prestonmartin35000@gmail.com"}
-                  className="underline"
-                >
-                  prestonmartin35000@gmail.com
-                </a>
-                .
+              <p className="">
+                Our boards last <u>2 to 3 times longer</u> than traditional
+                fiberglass boards. Our blanks are made of{" "}
+                <u>recycled materials</u>. And we use <u>Bio-resin</u> to reduce
+                our impact on the environment.
               </p>
+              <motion.div className="absolute bottom-5 right-5">
+                <DownArrowAlt className="w-10 animate-bounce dark:fill-white" />
+              </motion.div>
             </div>
             <div className="bg-white dark:bg-black p-2 rounded-md bg-opacity-50 shadow-2xl backdrop-blur-lg md:w-1/3 w-2/3 place-content-center">
               <Image
                 src="/stock3.png"
+                layout="responsive"
+                width="150"
+                height="150"
+                className="mx-auto rounded-sm"
+                alt="surfboard"
+              />
+            </div>
+          </div>
+        </section>
+        <section
+          className="h-screen  dark:text-white text-black font-major place-content-center align-middle place-items-center flex px-8"
+          style={
+            !darkMode
+              ? {
+                  scrollSnapAlign: "start",
+                  backgroundColor: "#e5e5f7",
+                  opacity: "0.8",
+                  backgroundImage:
+                    "radial-gradient(#5f5f5f 0.35000000000000003px, #e5e5f7 0.35000000000000003px)",
+                  backgroundSize: "27px 27px",
+                }
+              : {
+                  scrollSnapAlign: "start",
+                  backgroundColor: "#080830",
+                  opacity: "1",
+                  backgroundImage:
+                    "radial-gradient(#6d6d8f 0.35000000000000003px, #080830 0.35000000000000003px)",
+                  backgroundSize: "27px 27px",
+                }
+          }
+        >
+          <div className="place-content-center md:space-x-20 flex md:flex-row flex-col place-items-center max-w-[1300px] w-full relative">
+            <div className="md:w-1/2 my-auto bg-white dark:bg-black outline-1 p-5 rounded-md bg-opacity-50 shadow-xl backdrop-blur-sm mb-5">
+              <h1 className="font-major-black mx-auto lg:mb-12 mb-3 italic font-bold text-center text-xl">
+                Humble beginnings.
+              </h1>
+
+              <h1 className="md:text-lg font-major-black mb-1 mx-auto">
+                The Origin
+              </h1>
+              <div className="h-[2px] bg-black w-[50px] dark:bg-white my-4" />
+              <p className=" md:mb-12 mb-3">
+                C6 Surf was established in 2021 by two 21-year-olds with the
+                principal goal of revolutionizing the surf industry. Since the
+                1960s, surf development has plateaued with the creation of a
+                fiberglass board, and to the present day remains the same. It is
+                time to change what we ride.
+              </p>
+
+              <h1 className="md:text-lg font-major-black mb-1 mx-auto">
+                C6&#39;s Process
+              </h1>
+              <div className="h-[2px] bg-black w-[50px] dark:bg-white my-4" />
+              <p className="">
+                C6 has wholly rethought the process of creating a board,
+                introducing aerospace-grade carbon fiber technology into
+                surfing. Designed for those who want to push the limits of what
+                the human body can do on a surfboard, these boards allow you to
+                areal higher and land harder. Our goal is to create boards that
+                are stronger, more responsive, lighter, and faster than any
+                boards on the market. Join the C6 revolution.
+              </p>
+            </div>
+            <div className="bg-white dark:bg-black p-2 rounded-md bg-opacity-50 shadow-2xl backdrop-blur-lg md:w-1/3 w-2/3 place-content-center">
+              <Image
+                src="/shot2.png"
                 layout="responsive"
                 width="150"
                 height="150"

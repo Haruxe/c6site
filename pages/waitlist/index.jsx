@@ -87,14 +87,35 @@ const Home = ({
       animate={{ opacity: 1 }}
       transition={{ duration: "2" }}
     >
-      <div className="max-w-[1300px] font-major font-bold md:text-2xl text-sm dark:text-white text-black flex absolute md:mt-[160px] mt-[60px] z-10 mx-auto w-full flex-col space-y-4 md:p-8 p-4">
+      <div
+        style={
+          !darkMode
+            ? {
+                scrollSnapAlign: "start",
+                backgroundColor: "#e5e5f7",
+                opacity: "0.8",
+                backgroundImage:
+                  "radial-gradient(#5f5f5f 0.35000000000000003px, #e5e5f7 0.35000000000000003px)",
+                backgroundSize: "27px 27px",
+              }
+            : {
+                scrollSnapAlign: "start",
+                backgroundColor: "#080830",
+                opacity: "1",
+                backgroundImage:
+                  "radial-gradient(#6d6d8f 0.35000000000000003px, #080830 0.35000000000000003px)",
+                backgroundSize: "27px 27px",
+              }
+        }
+        className="max-w-[1300px] h-full font-major font-bold md:text-lg text-sm text-black flex absolute mt-[60px] z-10 mx-auto w-full flex-col space-y-4 md:p-8 p-4"
+      >
         <div className="md:w-2/3 w-full mx-auto">
           <div className="my-3 mx-auto space-y-8 bg-[#ffffffd0] md:p-12 p-6 rounded-md flex flex-col font-major backdrop-blur-lg">
             <div>
-              <h1 className="w-full font-major-black text-2xl text-center">
+              <h1 className="w-full font-major-black text-xl text-center">
                 Join The Waitlist
               </h1>
-              <div className="h-[2px] bg-black w-[100px] dark:bg-white mx-auto mt-4 " />
+              <div className="h-[2px] bg-black w-[100px] mx-auto mt-4 " />
             </div>
 
             <div>
@@ -104,7 +125,7 @@ const Home = ({
               <input
                 type={"text"}
                 id="name"
-                className="text-black bg-transparent outline-none text-md mb-2 mt-1"
+                className="text-black bg-transparent outline-none text-md mb-2 mt-1 w-full"
                 placeholder="Enter your name"
                 required={true}
               />
@@ -118,7 +139,7 @@ const Home = ({
               <input
                 type={"text"}
                 id="email"
-                className="text-black bg-transparent outline-none text-md mb-2 mt-1"
+                className="text-black bg-transparent outline-none text-md mb-2 mt-1 w-full"
                 placeholder="Enter your email"
                 required={true}
               />
@@ -131,7 +152,7 @@ const Home = ({
               <input
                 type={"text"}
                 id="phone"
-                className="text-black bg-transparent outline-none text-md mb-2 mt-1"
+                className="text-black bg-transparent outline-none text-md mb-2 mt-1 w-full"
                 placeholder="Enter your phone #"
                 required={true}
               />
@@ -404,7 +425,6 @@ const Home = ({
           </div>
         </div>
       </div>
-      <Backdrop darkMode={darkMode} />
     </motion.div>
   );
 };

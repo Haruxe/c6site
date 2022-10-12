@@ -1,92 +1,62 @@
-import { Canvas, useFrame } from "@react-three/fiber";
 import { motion } from "framer-motion";
-import { Suspense } from "react";
-import {
-  Cloud,
-  Environment,
-  Text,
-  Sparkles,
-  Lightformer,
-  Float,
-} from "@react-three/drei";
-import { LayerMaterial, Depth, Noise } from "lamina";
-import * as THREE from "three";
-import Backdrop from "../../components/Backdrop.js";
+import Image from "next/image";
 
-function Caption({ children, darkMode }) {
+const Home = ({ darkMode }) => {
   return (
-    <Text
-      position={[0, -4.5, 0]}
-      lineHeight={1.4}
-      font="MajorMonoDisplay-Regular.ttf"
-      fontSize={0.4}
-      material-toneMapped={false}
-      anchorX="center"
-      anchorY="middle"
-      color={darkMode ? "white" : "black"}
-    >
-      {children}
-    </Text>
-  );
-}
-
-function Rig({ v = new THREE.Vector3() }) {
-  return useFrame((state) => {
-    state.camera.position.lerp(
-      v.set(state.mouse.x / 10, state.mouse.y / 10, 10),
-      0.05
-    );
-  });
-}
-
-function Bg({ darkMode }) {
-  return (
-    <mesh scale={100} rotation={[0, Math.PI / 4, 0]}>
-      <boxGeometry args={[1, 1, 1]} />
-      <LayerMaterial side={THREE.BackSide}>
-        <Depth
-          colorB={darkMode ? "#282952" : "#c1ecf7"}
-          colorA={darkMode ? "black" : "#9c9c9c"}
-          alpha={1}
-          mode="normal"
-          near={130}
-          far={200}
-          origin={[100, 100, -100]}
-        />
-        <Noise
-          mapping="local"
-          type="white"
-          scale={1000}
-          colorA="white"
-          colorB="black"
-          mode="subtract"
-          alpha={0.2}
-        />
-      </LayerMaterial>
-    </mesh>
-  );
-}
-
-const Home = ({
-  scale = Array.from({ length: 100 }, () => 0.5 + Math.random() * 4),
-  darkMode,
-}) => {
-  return (
-    <motion.div
-      className="flex place-content-center h-screen"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: "2" }}
-    >
-      <div className="max-w-[1300px] font-major font-bold md:text-2xl text-sm dark:text-white text-black flex absolute md:mt-[160px] mt-[60px] z-10 mx-auto w-full flex-col space-y-5 p-8">
-        <h1 className="w-full font-major-black text-4xl">Contact Us</h1>
-        <div className="h-[2px] bg-black w-[50px] dark:bg-white" />
-        <h1 className="md:w-2/3 w-full">
-          For any questions, send an email to place@holder.com
-        </h1>
+    <div>
+      <div
+        style={{ scrollSnapType: "y mandatory", overflowY: "scroll" }}
+        className="w-screen h-screen"
+      >
+        <section
+          className="h-screen dark:text-white text-black font-major place-content-center align-middle place-items-center flex px-8"
+          style={
+            !darkMode
+              ? {
+                  scrollSnapAlign: "start",
+                  backgroundColor: "#e5e5f7",
+                  opacity: "0.8",
+                  backgroundImage:
+                    "radial-gradient(#5f5f5f 0.35000000000000003px, #e5e5f7 0.35000000000000003px)",
+                  backgroundSize: "27px 27px",
+                }
+              : {
+                  scrollSnapAlign: "start",
+                  backgroundColor: "#080830",
+                  opacity: "1",
+                  backgroundImage:
+                    "radial-gradient(#6d6d8f 0.35000000000000003px, #080830 0.35000000000000003px)",
+                  backgroundSize: "27px 27px",
+                }
+          }
+        >
+          <div className="place-content-center md:space-x-20 flex md:flex-row flex-col place-items-center max-w-[1300px] w-full relative">
+            <div className="md:w-1/2 my-auto bg-white dark:bg-black outline-1 p-5 rounded-md bg-opacity-50 shadow-xl backdrop-blur-sm mt-5">
+              <h1 className="font-major-black mx-auto text-center text-xl">
+                Contact
+              </h1>
+              <div className="h-[2px] bg-black mx-auto w-[50px] lg:mb-12 mb-3 dark:bg-white mt-4" />
+              <p className=" md:mb-12 mb-3">
+                Thank you for checking out our website. If you have any interest
+                in learning more or testing out some of these boards please feel
+                free to email us directly at{" "}
+                <a
+                  className="text-blue-600 cursor-pointer"
+                  href="mailto:prestonmartin@ucsb.edu"
+                >
+                  prestonmartin@ucsb.edu
+                </a>
+                .
+                <br />
+                <br /> Thank you for your support,
+                <br />
+                C6
+              </p>
+            </div>
+          </div>
+        </section>
       </div>
-      <Backdrop darkMode={darkMode} />
-    </motion.div>
+    </div>
   );
 };
 

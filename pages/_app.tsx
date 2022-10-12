@@ -128,19 +128,31 @@ function MyApp({ Component, pageProps }: AppProps) {
                 </Link>
               </motion.div>
             </div>
-            <div className="flex my-auto text-white decoration-white md:text-lg text-sm space-x-4 md:space-x-10 w-full flex-row">
+            <div className="flex my-auto text-white font-major decoration-white md:text-md text-sm space-x-4 md:space-x-10 w-full flex-row">
               <>
                 <motion.div className="my-auto hover:animate-pulse cursor-pointer">
                   <Link href="/waitlist">
-                    <h1 className="font-major tracking-wider underline-offset-4">
+                    <h1 className=" tracking-wider underline-offset-4">
                       Waitlist
                     </h1>
                   </Link>
                 </motion.div>
                 <motion.div className="my-auto hover:animate-pulse cursor-pointer">
                   <Link href="/showroom">
-                    <h1 className="font-major tracking-wider underline-offset-4">
+                    <h1 className="tracking-wider underline-offset-4">
                       Showroom
+                    </h1>
+                  </Link>
+                </motion.div>
+                <motion.div className="my-auto hover:animate-pulse cursor-pointer">
+                  <Link href="/team">
+                    <h1 className="tracking-wider underline-offset-4">Team</h1>
+                  </Link>
+                </motion.div>
+                <motion.div className="my-auto hover:animate-pulse cursor-pointer">
+                  <Link href="/contact">
+                    <h1 className="tracking-wider underline-offset-4">
+                      Contact
                     </h1>
                   </Link>
                 </motion.div>
